@@ -53,6 +53,9 @@ class blog_post
      * @var int
      *
      * @ORM\Column(name="author_id", type="integer")
+     *
+     * @OneToOne(targetEntity="blog_author")
+     * @JoinColumn(name="authorId", referencedColumnName="id")
      */
     private $authorId;
 
