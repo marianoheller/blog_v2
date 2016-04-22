@@ -25,6 +25,9 @@ class blog_tag
      * @var int
      *
      * @ORM\Column(name="post_id", type="integer")
+     *
+     * @ORM\OneToOne(targetEntity="blog_post")
+     * @ORM\JoinColumn(name="post_id", referencedColumnName="id")
      */
     private $postId;
 
