@@ -15,14 +15,7 @@ class blog_related
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-    /**
-     * @var int
      *
      * @ORM\Column(name="blog_post_id", type="integer")
      */
@@ -31,34 +24,19 @@ class blog_related
     /**
      * @var int
      *
+     * @ORM\Id
+     *
      * @ORM\Column(name="blog_related_post_id", type="integer")
      */
     private $blogRelatedPostId;
 
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set blogPostId
-     *
-     * @param integer $blogPostId
-     *
-     * @return blog_related
-     */
-    public function setBlogPostId($blogPostId)
+    public function __construct($blogPostId, $blogRelatedPostId)
     {
         $this->blogPostId = $blogPostId;
-
-        return $this;
+        $this->blogRelatedPostId = $blogRelatedPostId;
     }
+
 
     /**
      * Get blogPostId
@@ -68,20 +46,6 @@ class blog_related
     public function getBlogPostId()
     {
         return $this->blogPostId;
-    }
-
-    /**
-     * Set blogRelatedPostId
-     *
-     * @param integer $blogRelatedPostId
-     *
-     * @return blog_related
-     */
-    public function setBlogRelatedPostId($blogRelatedPostId)
-    {
-        $this->blogRelatedPostId = $blogRelatedPostId;
-
-        return $this;
     }
 
     /**

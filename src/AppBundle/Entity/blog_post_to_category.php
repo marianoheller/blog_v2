@@ -15,14 +15,7 @@ class blog_post_to_category
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-    /**
-     * @var int
      *
      * @ORM\Column(name="category_id", type="integer")
      */
@@ -31,34 +24,20 @@ class blog_post_to_category
     /**
      * @var int
      *
+     * @ORM\Id
+     *
      * @ORM\Column(name="post_id", type="integer")
      */
     private $postId;
 
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
-    /**
-     * Set categoryId
-     *
-     * @param integer $categoryId
-     *
-     * @return blog_post_to_category
-     */
-    public function setCategoryId($categoryId)
+    public function __construct($categoryId, $postId)
     {
         $this->categoryId = $categoryId;
-
-        return $this;
+        $this->postId = $postId;
     }
+
 
     /**
      * Get categoryId
@@ -68,20 +47,6 @@ class blog_post_to_category
     public function getCategoryId()
     {
         return $this->categoryId;
-    }
-
-    /**
-     * Set postId
-     *
-     * @param integer $postId
-     *
-     * @return blog_post_to_category
-     */
-    public function setPostId($postId)
-    {
-        $this->postId = $postId;
-
-        return $this;
     }
 
     /**
