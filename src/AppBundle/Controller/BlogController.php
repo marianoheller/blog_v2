@@ -25,6 +25,11 @@ define ("Authors", serialize (array ("Jesse Stokes", "Mike Myers", "Micky Vainil
 
 class BlogController extends Controller
 {
+
+    //********************************************************************************************
+    // Public functions / Routing
+    //********************************************************************************************
+
     /**
      * @Route("/blog",
      *     name="blog"

@@ -4,7 +4,6 @@
     <list default="true" id="39b145bc-b8a4-4403-8089-82a2f23db5be" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/web/bundles/framework" afterPath="$PROJECT_DIR$/web/bundles/framework" />
     </list>
     <ignored path="blog_v2.iws" />
@@ -75,11 +74,12 @@
       <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47959185">
-              <caret line="67" column="43" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
+            <state vertical-scroll-proportion="-1.2547992">
+              <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
               <folding>
                 <element signature="e#39#98#0#PHP" expanded="true" />
-                <element signature="e#1004#1033#1#PHP" expanded="true" />
+                <element signature="e#1238#1267#1#PHP" expanded="true" />
+                <element signature="e#3809#3832#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,8 +88,8 @@
       <file leaf-file-name="blog_author.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/blog_author.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="15.961538">
-              <caret line="28" column="24" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="24" />
+            <state vertical-scroll-proportion="-7.8461537">
+              <caret line="12" column="17" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -635,21 +635,43 @@
       <option name="project" value="LOCAL" />
       <updated>1461690381921</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Fixed serializer.">
+      <created>1461691472494</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1461691472494</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Author generator created.">
+      <created>1461692669561</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1461692669561</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25586355" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.49573562" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.48541668" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3291536" sideWeight="0.51458335" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32869378" sideWeight="0.5250533" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.49166667" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.48933902" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.48333332" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32869378" sideWeight="0.4749467" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -657,7 +679,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -716,7 +737,9 @@
     <MESSAGE value="Fixing problem with  framework folder again." />
     <MESSAGE value="No changes." />
     <MESSAGE value="Working with serializer. Bug in testing." />
-    <option name="LAST_COMMIT_MESSAGE" value="Working with serializer. Bug in testing." />
+    <MESSAGE value="Fixed serializer." />
+    <MESSAGE value="Author generator created." />
+    <option name="LAST_COMMIT_MESSAGE" value="Author generator created." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -753,7 +776,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#1004#1033#1#PHP" expanded="true" />
+            <element signature="e#1238#1267#1#PHP" expanded="true" />
+            <element signature="e#3809#3832#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -820,7 +844,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#1004#1033#1#PHP" expanded="true" />
+            <element signature="e#1238#1267#1#PHP" expanded="true" />
+            <element signature="e#3809#3832#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -887,7 +912,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#1004#1033#1#PHP" expanded="true" />
+            <element signature="e#1238#1267#1#PHP" expanded="true" />
+            <element signature="e#3809#3832#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -954,7 +980,8 @@
           <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#1004#1033#1#PHP" expanded="true" />
+            <element signature="e#1238#1267#1#PHP" expanded="true" />
+            <element signature="e#3809#3832#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1120,19 +1147,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/blog_author.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="15.961538">
-          <caret line="28" column="24" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="24" />
+        <state vertical-scroll-proportion="-7.8461537">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47959185">
-          <caret line="67" column="43" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
+        <state vertical-scroll-proportion="-1.2547992">
+          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#1004#1033#1#PHP" expanded="true" />
+            <element signature="e#1238#1267#1#PHP" expanded="true" />
+            <element signature="e#3809#3832#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
