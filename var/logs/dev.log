@@ -774,3 +774,5 @@
 [2016-04-26 19:08:04] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
 [2016-04-26 19:08:32] request.INFO: Matched route "test". {"route_parameters":{"_controller":"AppBundle\\Controller\\BlogController::testAction","_route":"test"},"request_uri":"http://localhost/cmd/test"} []
 [2016-04-26 19:08:32] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
+[2016-04-26 19:37:41] request.INFO: Matched route "test". {"route_parameters":{"_controller":"AppBundle\\Controller\\BlogController::testAction","_route":"test"},"request_uri":"http://localhost/cmd/test"} []
+[2016-04-26 19:37:41] security.INFO: Populated the TokenStorage with an anonymous Token. [] []

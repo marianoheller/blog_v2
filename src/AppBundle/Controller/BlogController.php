@@ -72,32 +72,24 @@ class BlogController extends Controller
     // Private functions
     //********************************************************************************************
 
+    //*******************************************
+    // Generators
+    //*******************************************
+
     private function generateAuthor( $index )
     {
-        /*$url = "http://uinames.com/api/";
+        $url = "http://uinames.com/api/";
         $lines_array=file($url);
         $lines_string=implode('',$lines_array);
-        $crawler = new Crawler($lines_string);
-        $nodeValues = $crawler->filter('body > p')->each(function (Crawler $node, $i) {
-            return $node->text();
-        });
-        $text = implode("<br/>",$nodeValues);*/
 
-        $authors = unserialize(Authors);
-        $fullName = $authors[$index];
-        $nameArray = explode(" ",$fullName);
-        $lastName = "Doe";
-        if ( sizeof($nameArray) > 1 )
-            $lastName = $nameArray[1];
-        $name = $nameArray[0];
-
-
-        $author = new blog_author();
-        $author->setFirstName($name);
-        $author->setMail(strtolower($name)."@gmail.com");
-        $author->setLastName($lastName);
-
-        $author->setDisplayName($name);
+        $encoders = array( new JsonEncoder() );
+        $normalizers = array(new ObjectNormalizer());
+        $serializer = new Serializer($normalizers, $encoders);
+        $lines_string = preg_replace("/\bname\b/","firstName",$lines_string);
+        $lines_string = preg_replace("/\bsurname\b/","lastName",$lines_string);
+        $lines_string = preg_replace("/\bregion\b/","displayName",$lines_string);
+        $author = $serializer->deserialize($lines_string, 'AppBundle\Entity\blog_author', 'json');
+        $author->setMail(substr(strtolower($author->getFirstName),0,1).strtolower($author->getLastName)."@gmail.com");
 
         return $author;
     }
@@ -107,4 +99,32 @@ class BlogController extends Controller
         $post = new blog_post();
         return $post;
     }
+
+
+    //*******************************************
+    // Cleaners
+    //*******************************************
+
+    private function clearAllAuthors()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repo = $this->getDoctrine()->getRepository('AppBundle:blog_author');
+        $query = $repo->createQueryBuilder('p');
+        $query->delete();
+        $query->getQuery()->execute();
+        $em->flush();
+    }
+
+    //*******************************************
+    // Savers
+    //*******************************************
+
+    private function saveAuthorInDB($author)
+    {
+        $em = $this->getDoctrine()->getManager();
+        //Push data
+        $em->persist($author);
+        $em->flush();
+    }
+
 }
