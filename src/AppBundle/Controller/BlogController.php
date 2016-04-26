@@ -19,6 +19,7 @@ const cantPostsAtInit = 10;
 define ("Authors", serialize (array ("Jesse Stokes", "Mike Myers", "Micky Vainilla","Skyler Johansson")));
 
 
+
 class BlogController extends Controller
 {
     /**
@@ -48,7 +49,14 @@ class BlogController extends Controller
 
     private function generateAuthor( $index )
     {
-        $userUrlApi = "http://uinames.com/api/";
+        /*$url = "http://uinames.com/api/";
+        $lines_array=file($url);
+        $lines_string=implode('',$lines_array);
+        $crawler = new Crawler($lines_string);
+        $nodeValues = $crawler->filter('body > p')->each(function (Crawler $node, $i) {
+            return $node->text();
+        });
+        $text = implode("<br/>",$nodeValues);*/
 
         $authors = unserialize(Authors);
         $fullName = $authors[$index];
