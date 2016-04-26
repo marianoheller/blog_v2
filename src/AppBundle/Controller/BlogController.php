@@ -63,7 +63,7 @@ class BlogController extends Controller
         $lines_string = preg_replace("/\bname\b/","firstName",$lines_string);
         $lines_string = preg_replace("/\bsurname\b/","lastName",$lines_string);
         $lines_string = preg_replace("/\bregion\b/","displayName",$lines_string);
-        $deserializedObject = $serializer->deserialize($lines_string, 'AppBundle\blog_author', 'json');
+        $deserializedObject = $serializer->deserialize($lines_string, 'AppBundle\Entity\blog_author', 'json');
 
         return new Response($lines_string);
     }
