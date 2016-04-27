@@ -907,3 +907,8 @@
 [2016-04-27 18:34:07] doctrine.DEBUG: "START TRANSACTION" [] []
 [2016-04-27 18:34:07] doctrine.DEBUG: INSERT INTO blog_author (display_name, first_name, last_name, mail) VALUES (?, ?, ?, ?) {"1":"France","2":"Mathéo","3":"Lecomte","4":"flecomte@gmail.com"} []
 [2016-04-27 18:34:07] doctrine.DEBUG: "COMMIT" [] []
+[2016-04-27 19:30:46] request.INFO: Matched route "homepage". {"route_parameters":{"_controller":"AppBundle\\Controller\\DefaultController::indexAction","_route":"homepage"},"request_uri":"http://localhost:8000/"} []
+[2016-04-27 19:30:46] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
+[2016-04-27 19:30:46] request.INFO: Matched route "blog". {"route_parameters":{"_controller":"AppBundle\\Controller\\BlogController::indexAction","_route":"blog"},"request_uri":"http://localhost:8000/blog"} []
+[2016-04-27 19:30:46] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
+[2016-04-27 19:30:47] request.INFO: Matched route "_wdt". {"route_parameters":{"_controller":"web_profiler.controller.profiler:toolbarAction","token":"d68795","_route":"_wdt"},"request_uri":"http://localhost:8000/_wdt/d68795"} []

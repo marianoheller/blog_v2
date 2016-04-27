@@ -16,12 +16,29 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use AppBundle\Entity\blog_author;
 use AppBundle\Entity\blog_post;
 
+// On init stuff
 /** default image folder name (donde se guardan las imagenes) */
 const imagesFolderName = "images_blog";
 /** Cantidad de post a ser generador por init action */
 const cantPostsAtInit = 10;
 /** Cantidad de authors a ser generados por init action */
 const cantAuthorsAtInit = 4;
+/** Enable post comments on init action */
+const enableCommentsOnInit = false;
+/** Enable post on init action */
+const enablePostOnInit = true;
+/** Featured post on init action */
+const featuredOnInit = false;
+/** Initial views of generated post on init */
+const viewsOnInit = 0;
+
+// Formatting parameters
+/** Image banner post width */
+const bannerWidth = 900;
+/** Image banner post height */
+const bannerHeight = 300;
+
+
 
 
 /**
@@ -125,18 +142,18 @@ class BlogController extends Controller
     private function generatePost()
     {
         /*
-        private $id;
-        private $title;
-        private $article;
+        *private $id;
+        *private $title;
+        *private $article;
         private $titleClean;
         private $file;
-        private $authorId;
-        private $datePublished;
-        private $bannerImage;
-        private $featured;
-        private $enabled;
-        private $commentsEnabled;
-        private $views;
+        *private $authorId;
+        *private $datePublished;
+        *private $bannerImage;
+        *private $featured;
+        *private $enabled;
+        *private $commentsEnabled;
+        *private $views;
          */
         $blog_post = new blog_post();
 
@@ -177,7 +194,7 @@ class BlogController extends Controller
         //==================
         //DateTime
         $d1=new \DateTime(); //now
-        $blog_post->setDate($d1);
+        $blog_post->setDatePublished($d1);
 
         //==================
         //Image
@@ -196,10 +213,26 @@ class BlogController extends Controller
         }
         $filename_dest++;
 
-        $file = 'https://unsplash.it/850/350?image='.rand(0,70);
+        $file = "https://unsplash.it/".bannerWidth."/".bannerHeight."?image=".rand(0,70);
         $dest = "$folder\\$filename_dest.png";    //.basename($file);
         file_put_contents($dest,fopen($file,'r'));
-        $blog_post->setImage("/".$dest);
+        $blog_post->setBannerImage("/".$dest);
+
+        //==================
+        // Views
+        $blog_post->setViews(viewsOnInit);
+
+        //==================
+        // Enabled
+        $blog_post->setEnabled(enablePostOnInit);
+
+        //==================
+        // Featured
+        $blog_post->setFeatured(featuredOnInit);
+
+        //==================
+        // Comments enabled
+        $blog_post->setCommentsEnabled(enableCommentsOnInit);
 
         //==================
         //That's it
