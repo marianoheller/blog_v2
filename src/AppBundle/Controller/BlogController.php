@@ -12,10 +12,13 @@ use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
+use Symfony\Component\Validator\Tests\Fixtures\Entity;      //Esta no sé q hace
+
 use AppBundle\Entity\blog_author;
 use AppBundle\Entity\blog_post;
 use AppBundle\Entity\blog_comment;
-use Symfony\Component\Validator\Tests\Fixtures\Entity;
+use AppBundle\Entity\blog_user;
+
 
 // On init stuff
 /** default image folder name (donde se guardan las imagenes) */
@@ -24,6 +27,8 @@ const imagesFolderName = "images_blog";
 const cantPostsAtInit = 5;
 /** Cantidad de authors a ser generados por init action */
 const cantAuthorsAtInit = 4;
+/** Cantidad de users a ser generados por init action */
+const cantUsersAtInit = 6;
 
 /** Title clean on init */
 const titleCleanOnInit = NULL;
@@ -73,9 +78,10 @@ class BlogController extends Controller
      */
     public function initAction()
     {
-        //CLEAR ALL AUTHORS AND POSTS
+        //CLEAR ALL AUTHORS, POSTS, USERS
         $this->clearAllAuthors();
         $this->clearAllPosts();
+        $this->clearAllUsers();
 
         // DELETE IMAGES
         $this->deleteAllImages();
@@ -84,6 +90,12 @@ class BlogController extends Controller
         for ($i = 0; $i < cantAuthorsAtInit; $i++) {
             $author = $this->generateAuthor();
             $this->saveAuthorInDB($author);
+        }
+
+        //CREATE USERS
+        for ($i = 0; $i < cantUsersAtInit; $i++) {
+            $user = $this->generateUser();
+            $this->saveUserInDB($user);
         }
 
         //CREATE POSTS
@@ -257,13 +269,38 @@ class BlogController extends Controller
         return $blog_post;
     }
 
+    /**
+     * @return blog_user
+     */
+    private function generateUser()
+    {
+
+        $url = "http://api.namefake.com/";
+        $lines_array=file($url);
+        $lines_string=implode('',$lines_array);
+
+        $encoders = array( new JsonEncoder() );
+        $normalizers = array(new ObjectNormalizer());
+        $serializer = new Serializer($normalizers, $encoders);
+        $lines_string = preg_replace("/\bname\b/","firstName",$lines_string);
+        $lines_string = preg_replace("/\busername\b/","name",$lines_string);
+        $lines_string = preg_replace("/\bemail_u\b/","mail",$lines_string);
+        $lines_string = preg_replace("/\burl\b/","website",$lines_string);
+        /** @var blog_user $user */
+        $user = $serializer->deserialize($lines_string, 'AppBundle\Entity\blog_user', 'json');
+        $auxMail = strtolower($user->getMail());
+        $user->setMail($auxMail."@gmail.com");
+
+        return $user;
+    }
+
 
     private function generateComment()
     {
         /*
-        private $id;
-        private $userId;
-        private $postId;
+        private $id; (pk auto)
+        private $userId;    (foreign to blog_user)
+        private $postId;    (foreign to blog_post)
         private $isReplyToId;
         private $comment;
         private $markRead;
@@ -273,7 +310,12 @@ class BlogController extends Controller
 
         $comment = new blog_comment();
 
+
+
+
+
     }
+
 
 
     //*******************************************
@@ -300,6 +342,16 @@ class BlogController extends Controller
         $em->flush();
     }
 
+    private function clearAllUsers()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repo = $this->getDoctrine()->getRepository('AppBundle:blog_user');
+        $query = $repo->createQueryBuilder('p');
+        $query->delete();
+        $query->getQuery()->execute();
+        $em->flush();
+    }
+
 
 
     //*******************************************
@@ -309,7 +361,6 @@ class BlogController extends Controller
     private function saveAuthorInDB($author)
     {
         $em = $this->getDoctrine()->getManager();
-        //Push data
         $em->persist($author);
         $em->flush();
     }
@@ -320,6 +371,13 @@ class BlogController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $em->persist($blog_post);
+        $em->flush();
+    }
+
+    private function saveUserInDB($user)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($user);
         $em->flush();
     }
 
