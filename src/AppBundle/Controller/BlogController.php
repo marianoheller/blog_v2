@@ -16,13 +16,18 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use AppBundle\Entity\blog_author;
 use AppBundle\Entity\blog_post;
 
-
+/** default image folder name (donde se guardan las imagenes) */
 const imagesFolderName = "images_blog";
+/** Cantidad de post a ser generador por init action */
 const cantPostsAtInit = 10;
+/** Cantidad de authors a ser generados por init action */
 const cantAuthorsAtInit = 4;
 
 
-
+/**
+ * Class BlogController
+ * @package AppBundle\Controller
+ */
 class BlogController extends Controller
 {
 
@@ -90,6 +95,9 @@ class BlogController extends Controller
     // Generators
     //*******************************************
 
+    /**
+     * @return blog_author object
+     */
     private function generateAuthor()
     {
         $url = "http://uinames.com/api/";
@@ -104,7 +112,6 @@ class BlogController extends Controller
         $lines_string = preg_replace("/\bregion\b/","displayName",$lines_string);
         /** @var blog_author $author */
         $author = $serializer->deserialize($lines_string, 'AppBundle\Entity\blog_author', 'json');
-
         $mailUser = strtolower(substr($this->stringToUTF8($author->getFirstName()),0,1));
         $mailUser .= strtolower($this->stringToUTF8($author->getLastName()));
         $author->setMail($mailUser."@gmail.com");
@@ -112,10 +119,91 @@ class BlogController extends Controller
         return $author;
     }
 
+    /**
+     * @return blog_post object
+     */
     private function generatePost()
     {
-        $post = new blog_post();
-        return $post;
+        /*
+        private $id;
+        private $title;
+        private $article;
+        private $titleClean;
+        private $file;
+        private $authorId;
+        private $datePublished;
+        private $bannerImage;
+        private $featured;
+        private $enabled;
+        private $commentsEnabled;
+        private $views;
+         */
+        $blog_post = new blog_post();
+
+        //==================
+        //Title
+        $url='http://loripsum.net/api/2/short';
+        $lines_array=file($url);
+        $lines_string=implode('',$lines_array);
+        $crawler = new Crawler($lines_string);
+        $text = $crawler->filter('body > p')->last()->text();
+        $text=str_replace(', ','',$text);
+        $text=str_replace('. ','',$text);
+        $blog_post->setTitle(trim($text));
+
+        //==================
+        //Body/Article
+        $url='http://loripsum.net/api';
+        $lines_array=file($url);
+        $lines_string=implode('',$lines_array);
+        $crawler = new Crawler($lines_string);
+        $nodeValues = $crawler->filter('body > p')->each(function (Crawler $node, $i) {
+            return $node->text();
+        });
+        $text = implode("<br/>",$nodeValues);
+        $blog_post->setArticle($text);
+
+        //==================
+        //Author
+        $repo = $this->getDoctrine()->getRepository('AppBundle:Author');
+        $query = $repo->createQueryBuilder('a')
+            ->where('LENGTH(a.name) > :val')
+            ->setParameter('val', '1')
+            ->getQuery();
+        $authorsArray = $query->getResult();
+        $author = $authorsArray[random_int(0, sizeof($authorsArray)-1)];
+        $blog_post->setAuthor($author->getName());
+
+        //==================
+        //DateTime
+        $d1=new \DateTime(); //now
+        $blog_post->setDate($d1);
+
+        //==================
+        //Image
+        $folder = imagesFolderName;
+        if ( !is_dir($folder) )
+            mkdir($folder);
+        $ficherosArray = scandir($folder);
+        $filename_dest=0;
+        foreach( $ficherosArray as $fichero) {
+            $withoutExt = preg_replace('/\\.[^.\\s]{2,4}$/', '', basename($fichero) );
+            $value = intval($withoutExt);
+            if ( $value != 0 ) {
+                if ( $value > $filename_dest )
+                    $filename_dest = $value;
+            }
+        }
+        $filename_dest++;
+
+        $file = 'https://unsplash.it/850/350?image='.rand(0,70);
+        $dest = "$folder\\$filename_dest.png";    //.basename($file);
+        file_put_contents($dest,fopen($file,'r'));
+        $blog_post->setImage("/".$dest);
+
+        //==================
+        //That's it
+        return $blog_post;
     }
 
 
@@ -149,8 +237,13 @@ class BlogController extends Controller
     // Misc.
     //*******************************************
 
+    /**
+     * @param $str
+     * @return string
+     */
     private function ru2lat($str)
     {
+
         $tr = array(
             "А"=>"a", "Б"=>"b", "В"=>"v", "Г"=>"g", "Д"=>"d",
             "Е"=>"e", "Ё"=>"yo", "Ж"=>"zh", "З"=>"z", "И"=>"i",
