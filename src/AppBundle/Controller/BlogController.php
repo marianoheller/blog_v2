@@ -20,9 +20,12 @@ use AppBundle\Entity\blog_post;
 /** default image folder name (donde se guardan las imagenes) */
 const imagesFolderName = "images_blog";
 /** Cantidad de post a ser generador por init action */
-const cantPostsAtInit = 10;
+const cantPostsAtInit = 5;
 /** Cantidad de authors a ser generados por init action */
 const cantAuthorsAtInit = 4;
+
+/** Title clean on init */
+const titleCleanOnInit = NULL;
 /** Enable post comments on init action */
 const enableCommentsOnInit = false;
 /** Enable post on init action */
@@ -71,11 +74,21 @@ class BlogController extends Controller
     {
         //CLEAR ALL AUTHORS AND POSTS
         $this->clearAllAuthors();
+        $this->clearAllPosts();
+
+        // DELETE IMAGES
+        $this->deleteAllImages();
 
         //CREATE AUTHORS
         for ($i = 0; $i < cantAuthorsAtInit; $i++) {
             $author = $this->generateAuthor();
             $this->saveAuthorInDB($author);
+        }
+
+        //CREATE POSTS
+        for ($i = 0; $i < cantPostsAtInit; $i++) {
+            $blog_post = $this->generatePost();
+            $this->savePostInDB($blog_post);
         }
 
         return new Response("Blog inicializado");
@@ -144,8 +157,7 @@ class BlogController extends Controller
         *private $id;
         *private $title;
         *private $article;
-        private $titleClean;
-        private $file;
+        private $titleClean; -> Nullable (default: null)
         *private $authorId;
         *private $datePublished;
         *private $bannerImage;
@@ -181,14 +193,15 @@ class BlogController extends Controller
 
         //==================
         //Author
-        $repo = $this->getDoctrine()->getRepository('AppBundle:Author');
+        $repo = $this->getDoctrine()->getRepository('AppBundle:blog_author');
         $query = $repo->createQueryBuilder('a')
-            ->where('LENGTH(a.name) > :val')
+            ->where('LENGTH(a.firstName) > :val')
             ->setParameter('val', '1')
             ->getQuery();
         $authorsArray = $query->getResult();
+        /** @var blog_author $author */
         $author = $authorsArray[random_int(0, sizeof($authorsArray)-1)];
-        $blog_post->setAuthor($author->getName());
+        $blog_post->setAuthorId($author->getId());
 
         //==================
         //DateTime
@@ -213,9 +226,14 @@ class BlogController extends Controller
         $filename_dest++;
 
         $file = "https://unsplash.it/".bannerWidth."/".bannerHeight."?image=".rand(0,70);
-        $dest = "$folder\\$filename_dest.png";    //.basename($file);
+        //$dest = "$folder\\$filename_dest.png";
+        $dest = "$folder/$filename_dest.png";
         file_put_contents($dest,fopen($file,'r'));
         $blog_post->setBannerImage("/".$dest);
+
+        //==================
+        // Title clean
+        $blog_post->setTitleClean(titleCleanOnInit);
 
         //==================
         // Views
@@ -239,6 +257,7 @@ class BlogController extends Controller
     }
 
 
+
     //*******************************************
     // Cleaners
     //*******************************************
@@ -253,6 +272,18 @@ class BlogController extends Controller
         $em->flush();
     }
 
+    private function clearAllPosts()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repo = $this->getDoctrine()->getRepository('AppBundle:blog_post');
+        $query = $repo->createQueryBuilder('p');
+        $query->delete();
+        $query->getQuery()->execute();
+        $em->flush();
+    }
+
+
+
     //*******************************************
     // Savers
     //*******************************************
@@ -262,6 +293,15 @@ class BlogController extends Controller
         $em = $this->getDoctrine()->getManager();
         //Push data
         $em->persist($author);
+        $em->flush();
+    }
+
+
+
+    private function savePostInDB($blog_post)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($blog_post);
         $em->flush();
     }
 
@@ -306,4 +346,17 @@ class BlogController extends Controller
         return $input;
     }
 
+    private function deleteAllImages()
+    {
+        $folder = imagesFolderName;
+        if ( !is_dir($folder) )
+            return;
+        $ficherosArray = scandir($folder);
+        foreach( $ficherosArray as $fichero) {
+            if ( !is_dir($fichero) && strlen($fichero)>3)
+                unlink($folder."\\".$fichero);
+        }
+
+
+    }
 }

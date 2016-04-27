@@ -38,16 +38,9 @@ class blog_post
     /**
      * @var string
      *
-     * @ORM\Column(name="title_clean", type="string", length=255)
+     * @ORM\Column(name="title_clean", type="string", length=255, nullable=true)
      */
     private $titleClean;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="file", type="string", length=255)
-     */
-    private $file;
 
     /**
      * @var int
@@ -182,30 +175,6 @@ class blog_post
     public function getTitleClean()
     {
         return $this->titleClean;
-    }
-
-    /**
-     * Set file
-     *
-     * @param string $file
-     *
-     * @return blog_post
-     */
-    public function setFile($file)
-    {
-        $this->file = $file;
-
-        return $this;
-    }
-
-    /**
-     * Get file
-     *
-     * @return string
-     */
-    public function getFile()
-    {
-        return $this->file;
     }
 
     /**
