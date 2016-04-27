@@ -18,6 +18,8 @@ class blog_comment
      * @ORM\Id
      *
      * @ORM\Column(name="id", type="integer")
+     *
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
@@ -25,9 +27,10 @@ class blog_comment
     /**
      * @var int
      *
-     * @ORM\Id
-     *
      * @ORM\Column(name="user_id", type="integer")
+     *
+     * @ORM\OneToOne(targetEntity="blog_user")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $userId;
 
@@ -78,12 +81,6 @@ class blog_comment
     private $date;
 
 
-    public function __construct($id, $userId)
-    {
-        $this->id = $id;
-        $this->userId = $userId;
-    }
-
     /**
      * Get id
      *
@@ -92,6 +89,20 @@ class blog_comment
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set userId
+     *
+     * @param integer $userId
+     *
+     * @return $this
+     */
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+
+        return $this;
     }
 
 

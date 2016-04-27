@@ -15,6 +15,7 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use AppBundle\Entity\blog_author;
 use AppBundle\Entity\blog_post;
 use AppBundle\Entity\blog_comment;
+use Symfony\Component\Validator\Tests\Fixtures\Entity;
 
 // On init stuff
 /** default image folder name (donde se guardan las imagenes) */
@@ -259,6 +260,17 @@ class BlogController extends Controller
 
     private function generateComment()
     {
+        /*
+        private $id;
+        private $userId;
+        private $postId;
+        private $isReplyToId;
+        private $comment;
+        private $markRead;
+        private $enabled;
+        private $date;
+        */
+
         $comment = new blog_comment();
 
     }
