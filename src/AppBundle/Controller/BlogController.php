@@ -6,7 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-use Symfony\Component\Validator\Constraints\DateTime;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\CssSelector\CssSelectorConverter;
 use Symfony\Component\Serializer\Serializer;
@@ -15,6 +14,7 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
 use AppBundle\Entity\blog_author;
 use AppBundle\Entity\blog_post;
+use AppBundle\Entity\blog_comment;
 
 // On init stuff
 /** default image folder name (donde se guardan las imagenes) */
@@ -256,6 +256,12 @@ class BlogController extends Controller
         return $blog_post;
     }
 
+
+    private function generateComment()
+    {
+        $comment = new blog_comment();
+
+    }
 
 
     //*******************************************

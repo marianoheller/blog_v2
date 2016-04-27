@@ -15,11 +15,21 @@ class blog_comment
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     *
+     * @ORM\Column(name="id", type="integer")
      */
     private $id;
+
+
+    /**
+     * @var int
+     *
+     * @ORM\Id
+     *
+     * @ORM\Column(name="user_id", type="integer")
+     */
+    private $userId;
 
     /**
      * @var int
@@ -45,12 +55,6 @@ class blog_comment
      */
     private $comment;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="user_id", type="integer")
-     */
-    private $userId;
 
     /**
      * @var bool
@@ -74,6 +78,12 @@ class blog_comment
     private $date;
 
 
+    public function __construct($id, $userId)
+    {
+        $this->id = $id;
+        $this->userId = $userId;
+    }
+
     /**
      * Get id
      *
@@ -82,6 +92,17 @@ class blog_comment
     public function getId()
     {
         return $this->id;
+    }
+
+
+    /**
+     * Get userId
+     *
+     * @return int
+     */
+    public function getUserId()
+    {
+        return $this->userId;
     }
 
     /**
@@ -156,29 +177,7 @@ class blog_comment
         return $this->comment;
     }
 
-    /**
-     * Set userId
-     *
-     * @param integer $userId
-     *
-     * @return blog_comment
-     */
-    public function setUserId($userId)
-    {
-        $this->userId = $userId;
 
-        return $this;
-    }
-
-    /**
-     * Get userId
-     *
-     * @return int
-     */
-    public function getUserId()
-    {
-        return $this->userId;
-    }
 
     /**
      * Set markRead

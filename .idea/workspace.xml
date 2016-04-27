@@ -4,7 +4,7 @@
     <list default="true" id="39b145bc-b8a4-4403-8089-82a2f23db5be" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/blog_post.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/blog_post.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/blog_comment.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/blog_comment.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/web/bundles/framework" afterPath="$PROJECT_DIR$/web/bundles/framework" />
     </list>
@@ -33,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="blog_post_to_category.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="blog_post_to_category.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/blog_post_to_category.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.23077">
-              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.078947365">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -73,26 +73,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7368421">
-              <caret line="91" column="9" selection-start-line="91" selection-start-column="9" selection-end-line="91" selection-end-column="9" />
+            <state vertical-scroll-proportion="-17.0">
+              <caret line="261" column="38" selection-start-line="261" selection-start-column="38" selection-end-line="261" selection-end-column="38" />
               <folding>
                 <element signature="e#39#98#0#PHP" expanded="true" />
-                <element signature="e#6238#6261#1#PHP" expanded="true" />
-                <element signature="e#8473#8496#1#PHP" expanded="true" />
-                <element signature="e#8787#8808#1#PHP" expanded="true" />
+                <element signature="e#6219#6242#1#PHP" expanded="true" />
+                <element signature="e#8546#8569#1#PHP" expanded="true" />
+                <element signature="e#8860#8881#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blog_post.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/blog_post.php">
+      <file leaf-file-name="blog_comment.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/blog_comment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2692308">
-              <caret line="186" column="31" selection-start-line="186" selection-start-column="20" selection-end-line="186" selection-end-column="31" />
+            <state vertical-scroll-proportion="-54.26923">
+              <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -121,7 +121,6 @@
       <list>
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/blog_tag.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/blog_comment.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/blog_post_to_category.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/blog_related.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/blog/blog_content..html.twig" />
@@ -130,6 +129,7 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/blog_post.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/blog_comment.php" />
       </list>
     </option>
   </component>
@@ -272,28 +272,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Repository" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -665,7 +643,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461784364709</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Finished post generator.">
+      <created>1461786043330</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1461786043330</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView">
@@ -688,7 +672,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32762313" sideWeight="0.48294243" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25053534" sideWeight="0.45575693" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25053534" sideWeight="0.45575693" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -735,7 +719,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
-    <MESSAGE value="Added blog_related entity." />
     <MESSAGE value="Added author and tag entities." />
     <MESSAGE value="Added comments entity." />
     <MESSAGE value="Added blog_user entity." />
@@ -760,7 +743,8 @@
     <MESSAGE value="Improving post generator. Falta File y cleanUrl." />
     <MESSAGE value="Fixing Git - framework folder error." />
     <MESSAGE value="Updated .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated .gitignore" />
+    <MESSAGE value="Finished post generator." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished post generator." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -773,9 +757,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#6238#6261#1#PHP" expanded="true" />
-            <element signature="e#8473#8496#1#PHP" expanded="true" />
-            <element signature="e#8787#8808#1#PHP" expanded="true" />
+            <element signature="e#6219#6242#1#PHP" expanded="true" />
+            <element signature="e#8546#8569#1#PHP" expanded="true" />
+            <element signature="e#8860#8881#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -840,9 +824,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#6238#6261#1#PHP" expanded="true" />
-            <element signature="e#8473#8496#1#PHP" expanded="true" />
-            <element signature="e#8787#8808#1#PHP" expanded="true" />
+            <element signature="e#6219#6242#1#PHP" expanded="true" />
+            <element signature="e#8546#8569#1#PHP" expanded="true" />
+            <element signature="e#8860#8881#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -907,9 +891,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#6238#6261#1#PHP" expanded="true" />
-            <element signature="e#8473#8496#1#PHP" expanded="true" />
-            <element signature="e#8787#8808#1#PHP" expanded="true" />
+            <element signature="e#6219#6242#1#PHP" expanded="true" />
+            <element signature="e#8546#8569#1#PHP" expanded="true" />
+            <element signature="e#8860#8881#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -974,9 +958,9 @@
           <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#6238#6261#1#PHP" expanded="true" />
-            <element signature="e#8473#8496#1#PHP" expanded="true" />
-            <element signature="e#8787#8808#1#PHP" expanded="true" />
+            <element signature="e#6219#6242#1#PHP" expanded="true" />
+            <element signature="e#8546#8569#1#PHP" expanded="true" />
+            <element signature="e#8860#8881#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1068,14 +1052,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/blog_post_to_category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.23077">
-          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.5">
@@ -1145,14 +1121,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/blog_comment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.84210527">
-          <caret line="29" column="65" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/blog_author.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.84210527">
@@ -1171,14 +1139,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7368421">
-          <caret line="91" column="9" selection-start-line="91" selection-start-column="9" selection-end-line="91" selection-end-column="9" />
+        <state vertical-scroll-proportion="-17.0">
+          <caret line="261" column="38" selection-start-line="261" selection-start-column="38" selection-end-line="261" selection-end-column="38" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#6238#6261#1#PHP" expanded="true" />
-            <element signature="e#8473#8496#1#PHP" expanded="true" />
-            <element signature="e#8787#8808#1#PHP" expanded="true" />
+            <element signature="e#6219#6242#1#PHP" expanded="true" />
+            <element signature="e#8546#8569#1#PHP" expanded="true" />
+            <element signature="e#8860#8881#1#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/blog_comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-54.26923">
+          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/blog_post_to_category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.078947365">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
