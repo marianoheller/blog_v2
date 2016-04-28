@@ -18,6 +18,7 @@ use AppBundle\Entity\blog_author;
 use AppBundle\Entity\blog_post;
 use AppBundle\Entity\blog_comment;
 use AppBundle\Entity\blog_user;
+use AppBundle\Entity\blog_tag;
 
 //=======================================================================
 // On init stuff
@@ -317,7 +318,10 @@ class BlogController extends Controller
         return $user;
     }
 
-
+    /**
+     * @param $post_id
+     * @return blog_comment
+     */
     private function generateCommentToPost( $post_id )
     {
         /*
@@ -376,6 +380,13 @@ class BlogController extends Controller
         return $comment;
     }
 
+
+    private function generateTag()
+    {
+        $tag = new blog_tag();
+
+        return $tag;
+    }
 
 
     //*******************************************
