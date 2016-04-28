@@ -47,7 +47,7 @@ class blog_comment
     /**
      * @var int
      *
-     * @ORM\Column(name="is_reply_to_id", type="integer")
+     * @ORM\Column(name="is_reply_to_id", type="integer", nullable=true)
      */
     private $isReplyToId;
 

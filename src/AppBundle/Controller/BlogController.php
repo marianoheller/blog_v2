@@ -19,7 +19,7 @@ use AppBundle\Entity\blog_post;
 use AppBundle\Entity\blog_comment;
 use AppBundle\Entity\blog_user;
 
-
+//=======================================================================
 // On init stuff
 /** default image folder name (donde se guardan las imagenes) */
 const imagesFolderName = "images_blog";
@@ -29,6 +29,8 @@ const cantPostsAtInit = 5;
 const cantAuthorsAtInit = 4;
 /** Cantidad de users a ser generados por init action */
 const cantUsersAtInit = 6;
+/** Cantidad de comments totales del t0do el blog */
+const cantCommentsTotal = 3*cantPostsAtInit;
 
 /** Title clean on init */
 const titleCleanOnInit = NULL;
@@ -41,6 +43,12 @@ const featuredOnInit = false;
 /** Initial views of generated post on init */
 const viewsOnInit = 0;
 
+/** Comment MarkRead at init */
+const commentReadAtInit = false;
+/** Comment Enabled on init */
+const commentEnabledAtInit = true;
+
+//=======================================================================
 // Formatting parameters
 /** Image banner post width */
 const bannerWidth = 900;
@@ -103,6 +111,21 @@ class BlogController extends Controller
             $blog_post = $this->generatePost();
             $this->savePostInDB($blog_post);
         }
+
+        //CREATE COMMENTS
+        $repo = $this->getDoctrine()->getRepository('AppBundle:blog_post');
+        $query = $repo->createQueryBuilder('p')
+            ->where('LENGTH(p.title) > :val')
+            ->setParameter('val', '1')
+            ->getQuery();
+        $postArray = $query->getResult();
+        for ( $i=0 ; $i<cantCommentsTotal ; $i++) {
+            /** @var blog_post $postObject */
+            $postObject = $postArray[random_int(0, sizeof($postArray)-1)];
+            $comment = $this->generateCommentToPost($postObject->getId());
+            $this->saveCommentInDB($comment);
+        }
+
 
         return new Response("Blog inicializado");
     }
@@ -295,25 +318,62 @@ class BlogController extends Controller
     }
 
 
-    private function generateComment()
+    private function generateCommentToPost( $post_id )
     {
         /*
         private $id; (pk auto)
-        private $userId;    (foreign to blog_user)
-        private $postId;    (foreign to blog_post)
-        private $isReplyToId;
-        private $comment;
-        private $markRead;
-        private $enabled;
-        private $date;
+        *private $userId;    (foreign to blog_user)
+        *private $postId;    (foreign to blog_post)
+        *private $isReplyToId;
+        *private $comment;
+        *private $markRead;
+        *private $enabled;
+        *private $date;
         */
 
         $comment = new blog_comment();
 
+        //==================
+        // postId
+        $comment->setPostId($post_id);
 
+        //==================
+        // userId (random)
+        $repo = $this->getDoctrine()->getRepository('AppBundle:blog_user');
+        $query = $repo->createQueryBuilder('u')
+            ->where('LENGTH(u.name) > :val')
+            ->setParameter('val', '1')
+            ->getQuery();
+        $usersArray = $query->getResult();
+        /** @var blog_user $userObject */
+        $userObject = $usersArray[random_int(0, sizeof($usersArray)-1)];
+        $comment->setUserId($userObject->getId());
 
+        //==================
+        // Comment (text)
+        $url='http://loripsum.net/api/1/short';
+        $lines_array=file($url);
+        $lines_string=implode('',$lines_array);
+        $crawler = new Crawler($lines_string);
+        $textComment = $crawler->filter('body > p')->last()->text();
+        $textComment = str_replace(', ','',$textComment);
+        $textComment = str_replace('. ','',$textComment);
+        $comment->setComment(trim($textComment));
 
+        //==================
+        // markRead
+        $comment->setMarkRead(commentReadAtInit);
 
+        //==================
+        // enabled
+        $comment->setEnabled(commentEnabledAtInit);
+
+        //==================
+        // date
+        $d1=new \DateTime(); //now
+        $comment->setDate($d1);
+
+        return $comment;
     }
 
 
@@ -352,6 +412,15 @@ class BlogController extends Controller
         $em->flush();
     }
 
+    private function  clearAllComments()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repo = $this->getDoctrine()->getRepository('AppBundle:blog_comment');
+        $query = $repo->createQueryBuilder('p');
+        $query->delete();
+        $query->getQuery()->execute();
+        $em->flush();
+    }
 
 
     //*******************************************
@@ -365,8 +434,6 @@ class BlogController extends Controller
         $em->flush();
     }
 
-
-
     private function savePostInDB($blog_post)
     {
         $em = $this->getDoctrine()->getManager();
@@ -378,6 +445,13 @@ class BlogController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $em->persist($user);
+        $em->flush();
+    }
+
+    private function saveCommentInDB($comment)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($comment);
         $em->flush();
     }
 
