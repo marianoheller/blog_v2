@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39b145bc-b8a4-4403-8089-82a2f23db5be" name="Default" comment="Created comment generator. Gotta make replies.">
+    <list default="true" id="39b145bc-b8a4-4403-8089-82a2f23db5be" name="Default" comment="Trying to fix framework folder.">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/bundles/framework" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/bundles/framework" afterPath="$PROJECT_DIR$/web/bundles/framework" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
     </list>
     <ignored path="blog_v2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -665,7 +665,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461863226595</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Tag generator started. Gotta finish it.">
+      <created>1461864693732</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1461864693732</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TodoView">
@@ -681,7 +687,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26652452" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26652452" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.49573562" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.4792111" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25053534" sideWeight="0.5570362" order="7" side_tool="true" content_ui="tabs" />
@@ -735,7 +741,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
-    <MESSAGE value="Added blog_post_to_category entity. Gotta finish mapping." />
     <MESSAGE value="Modified blog_post foreign key." />
     <MESSAGE value="Got foreign keys of blog_post, blog_comment and blog_tag." />
     <MESSAGE value="Added composite keys. Removed setter from them added contructors." />
@@ -760,7 +765,8 @@
     <MESSAGE value="Modified blog_comment entity from original schema!.&#10; Now userId is a foreign key to blog_user. (not a pk).&#10; Id is pk and auto generated." />
     <MESSAGE value="Created user generator. Gotta make comments." />
     <MESSAGE value="Created comment generator. Gotta make replies." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created comment generator. Gotta make replies." />
+    <MESSAGE value="Tag generator started. Gotta finish it." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tag generator started. Gotta finish it." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
