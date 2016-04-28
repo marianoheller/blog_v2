@@ -87,10 +87,11 @@ class BlogController extends Controller
      */
     public function initAction()
     {
-        //CLEAR ALL AUTHORS, POSTS, USERS
+        //CLEAR ALL AUTHORS, POSTS, USERS, COMMENTS
         $this->clearAllAuthors();
         $this->clearAllPosts();
         $this->clearAllUsers();
+        $this->clearAllComments();
 
         // DELETE IMAGES
         $this->deleteAllImages();

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39b145bc-b8a4-4403-8089-82a2f23db5be" name="Default" comment="Fixing framework folder.">
+    <list default="true" id="39b145bc-b8a4-4403-8089-82a2f23db5be" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/misc/erd.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" />
     </list>
     <ignored path="blog_v2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,17 +64,17 @@
       <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.078947365">
-              <caret line="378" column="0" selection-start-line="378" selection-start-column="0" selection-end-line="378" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.4473684">
+              <caret line="295" column="0" selection-start-line="295" selection-start-column="0" selection-end-line="295" selection-end-column="0" />
               <folding>
                 <element signature="e#39#98#0#PHP" expanded="true" />
-                <element signature="e#3444#3465#1#PHP" expanded="true" />
-                <element signature="e#7638#7661#1#PHP" expanded="true" />
-                <element signature="e#11202#11223#1#PHP" expanded="true" />
-                <element signature="e#12774#12797#1#PHP" expanded="true" />
-                <element signature="e#13088#13109#1#PHP" expanded="true" />
-                <element signature="e#13400#13421#1#PHP" expanded="true" />
-                <element signature="e#13716#13740#1#PHP" expanded="true" />
+                <element signature="e#3489#3510#1#PHP" expanded="true" />
+                <element signature="e#7683#7706#1#PHP" expanded="true" />
+                <element signature="e#11247#11268#1#PHP" expanded="true" />
+                <element signature="e#12819#12842#1#PHP" expanded="true" />
+                <element signature="e#13133#13154#1#PHP" expanded="true" />
+                <element signature="e#13445#13466#1#PHP" expanded="true" />
+                <element signature="e#13761#13785#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -248,193 +250,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="misc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -697,7 +513,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461865010582</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Fixing framework folder.">
+      <created>1461865061140</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1461865061140</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView">
@@ -767,7 +589,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
-    <MESSAGE value="Got foreign keys of blog_post, blog_comment and blog_tag." />
     <MESSAGE value="Added composite keys. Removed setter from them added contructors." />
     <MESSAGE value="Started working with templates and created minimal controller." />
     <MESSAGE value="Changed controller." />
@@ -792,7 +613,8 @@
     <MESSAGE value="Created comment generator. Gotta make replies." />
     <MESSAGE value="Tag generator started. Gotta finish it." />
     <MESSAGE value="Trying to fix framework folder." />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to fix framework folder." />
+    <MESSAGE value="Fixing framework folder." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing framework folder." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -805,13 +627,13 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#3444#3465#1#PHP" expanded="true" />
-            <element signature="e#7638#7661#1#PHP" expanded="true" />
-            <element signature="e#11202#11223#1#PHP" expanded="true" />
-            <element signature="e#12774#12797#1#PHP" expanded="true" />
-            <element signature="e#13088#13109#1#PHP" expanded="true" />
-            <element signature="e#13400#13421#1#PHP" expanded="true" />
-            <element signature="e#13716#13740#1#PHP" expanded="true" />
+            <element signature="e#3489#3510#1#PHP" expanded="true" />
+            <element signature="e#7683#7706#1#PHP" expanded="true" />
+            <element signature="e#11247#11268#1#PHP" expanded="true" />
+            <element signature="e#12819#12842#1#PHP" expanded="true" />
+            <element signature="e#13133#13154#1#PHP" expanded="true" />
+            <element signature="e#13445#13466#1#PHP" expanded="true" />
+            <element signature="e#13761#13785#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -876,13 +698,13 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#3444#3465#1#PHP" expanded="true" />
-            <element signature="e#7638#7661#1#PHP" expanded="true" />
-            <element signature="e#11202#11223#1#PHP" expanded="true" />
-            <element signature="e#12774#12797#1#PHP" expanded="true" />
-            <element signature="e#13088#13109#1#PHP" expanded="true" />
-            <element signature="e#13400#13421#1#PHP" expanded="true" />
-            <element signature="e#13716#13740#1#PHP" expanded="true" />
+            <element signature="e#3489#3510#1#PHP" expanded="true" />
+            <element signature="e#7683#7706#1#PHP" expanded="true" />
+            <element signature="e#11247#11268#1#PHP" expanded="true" />
+            <element signature="e#12819#12842#1#PHP" expanded="true" />
+            <element signature="e#13133#13154#1#PHP" expanded="true" />
+            <element signature="e#13445#13466#1#PHP" expanded="true" />
+            <element signature="e#13761#13785#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -947,13 +769,13 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#3444#3465#1#PHP" expanded="true" />
-            <element signature="e#7638#7661#1#PHP" expanded="true" />
-            <element signature="e#11202#11223#1#PHP" expanded="true" />
-            <element signature="e#12774#12797#1#PHP" expanded="true" />
-            <element signature="e#13088#13109#1#PHP" expanded="true" />
-            <element signature="e#13400#13421#1#PHP" expanded="true" />
-            <element signature="e#13716#13740#1#PHP" expanded="true" />
+            <element signature="e#3489#3510#1#PHP" expanded="true" />
+            <element signature="e#7683#7706#1#PHP" expanded="true" />
+            <element signature="e#11247#11268#1#PHP" expanded="true" />
+            <element signature="e#12819#12842#1#PHP" expanded="true" />
+            <element signature="e#13133#13154#1#PHP" expanded="true" />
+            <element signature="e#13445#13466#1#PHP" expanded="true" />
+            <element signature="e#13761#13785#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1018,13 +840,13 @@
           <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#3444#3465#1#PHP" expanded="true" />
-            <element signature="e#7638#7661#1#PHP" expanded="true" />
-            <element signature="e#11202#11223#1#PHP" expanded="true" />
-            <element signature="e#12774#12797#1#PHP" expanded="true" />
-            <element signature="e#13088#13109#1#PHP" expanded="true" />
-            <element signature="e#13400#13421#1#PHP" expanded="true" />
-            <element signature="e#13716#13740#1#PHP" expanded="true" />
+            <element signature="e#3489#3510#1#PHP" expanded="true" />
+            <element signature="e#7683#7706#1#PHP" expanded="true" />
+            <element signature="e#11247#11268#1#PHP" expanded="true" />
+            <element signature="e#12819#12842#1#PHP" expanded="true" />
+            <element signature="e#13133#13154#1#PHP" expanded="true" />
+            <element signature="e#13445#13466#1#PHP" expanded="true" />
+            <element signature="e#13761#13785#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1219,17 +1041,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.078947365">
-          <caret line="378" column="0" selection-start-line="378" selection-start-column="0" selection-end-line="378" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.4473684">
+          <caret line="295" column="0" selection-start-line="295" selection-start-column="0" selection-end-line="295" selection-end-column="0" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#3444#3465#1#PHP" expanded="true" />
-            <element signature="e#7638#7661#1#PHP" expanded="true" />
-            <element signature="e#11202#11223#1#PHP" expanded="true" />
-            <element signature="e#12774#12797#1#PHP" expanded="true" />
-            <element signature="e#13088#13109#1#PHP" expanded="true" />
-            <element signature="e#13400#13421#1#PHP" expanded="true" />
-            <element signature="e#13716#13740#1#PHP" expanded="true" />
+            <element signature="e#3489#3510#1#PHP" expanded="true" />
+            <element signature="e#7683#7706#1#PHP" expanded="true" />
+            <element signature="e#11247#11268#1#PHP" expanded="true" />
+            <element signature="e#12819#12842#1#PHP" expanded="true" />
+            <element signature="e#13133#13154#1#PHP" expanded="true" />
+            <element signature="e#13445#13466#1#PHP" expanded="true" />
+            <element signature="e#13761#13785#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
