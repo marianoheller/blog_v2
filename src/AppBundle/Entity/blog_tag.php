@@ -41,7 +41,7 @@ class blog_tag
     /**
      * @var string
      *
-     * @ORM\Column(name="tag_clean", type="string", length=45)
+     * @ORM\Column(name="tag_clean", type="string", length=45, nullable=true)
      */
     private $tagClean;
 

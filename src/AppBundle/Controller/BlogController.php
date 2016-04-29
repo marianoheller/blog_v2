@@ -49,6 +49,9 @@ const commentReadAtInit = false;
 /** Comment Enabled on init */
 const commentEnabledAtInit = true;
 
+/** Cantidad de tags en total */
+const cantTagsTotalOnInit = cantPostsAtInit*3;
+
 //=======================================================================
 // Formatting parameters
 /** Image banner post width */
@@ -87,11 +90,12 @@ class BlogController extends Controller
      */
     public function initAction()
     {
-        //CLEAR ALL AUTHORS, POSTS, USERS, COMMENTS
+        //CLEAR ALL AUTHORS, POSTS, USERS, COMMENTS, TAGS
         $this->clearAllAuthors();
         $this->clearAllPosts();
         $this->clearAllUsers();
         $this->clearAllComments();
+        $this->clearAllTags();
 
         // DELETE IMAGES
         $this->deleteAllImages();
@@ -128,6 +132,10 @@ class BlogController extends Controller
             $this->saveCommentInDB($comment);
         }
 
+        //CREATE TAGS
+        $tagsArray = $this->generateTags();
+        $this->saveTagsInDB($tagsArray);
+
 
         return new Response("Blog inicializado");
     }
@@ -149,7 +157,7 @@ class BlogController extends Controller
         $lines_string = preg_replace("/\bname\b/","firstName",$lines_string);
         $lines_string = preg_replace("/\bsurname\b/","lastName",$lines_string);
         $lines_string = preg_replace("/\bregion\b/","displayName",$lines_string);
-        $deserializedObject = $serializer->deserialize($lines_string, 'AppBundle\Entity\blog_author', 'json');
+        //$deserializedObject = $serializer->deserialize($lines_string, 'AppBundle\Entity\blog_author', 'json');
 
         return new Response($lines_string);
     }
@@ -382,11 +390,36 @@ class BlogController extends Controller
     }
 
 
-    private function generateTag()
+    private function generateTags()
     {
-        $tag = new blog_tag();
+        $tagArray = [];
+        $url = "http://randomword.setgetgo.com/get.php";
 
-        return $tag;
+        //Create tags without foreign key to post
+        for ( $i=0 ; $i<cantTagsTotalOnInit ; $i++) {
+            $tag = new blog_tag();
+            $lines_array=file($url);
+            $lines_string=implode('',$lines_array);
+            $tag->setTag($lines_string);
+            array_push($tagArray,$tag);
+        }
+
+        // Now create post assignment
+        $repo = $this->getDoctrine()->getRepository('AppBundle:blog_post');
+        $query = $repo->createQueryBuilder('p')
+            ->where('LENGTH(p.title) > :val')
+            ->setParameter('val', '1')
+            ->getQuery();
+        $postArray = $query->getResult();
+        /** @var blog_tag $tag */
+        foreach ( $tagArray as $tag)
+        {
+            /** @var blog_post $postObject */
+            $postObject = $postArray[random_int(0, sizeof($postArray)-1)];
+            $tag->setPostId( $postObject->getId() );
+        }
+
+        return $tagArray;
     }
 
 
@@ -434,6 +467,16 @@ class BlogController extends Controller
         $em->flush();
     }
 
+    private function  clearAllTags()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repo = $this->getDoctrine()->getRepository('AppBundle:blog_tag');
+        $query = $repo->createQueryBuilder('t');
+        $query->delete();
+        $query->getQuery()->execute();
+        $em->flush();
+    }
+
 
     //*******************************************
     // Savers
@@ -464,6 +507,17 @@ class BlogController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $em->persist($comment);
+        $em->flush();
+    }
+
+
+    private function saveTagsInDB($tagsArray)
+    {
+        /** @var blog_tag $tag */
+        foreach ( $tagsArray as $tag) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($tag);
+        }
         $em->flush();
     }
 
