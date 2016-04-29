@@ -21,6 +21,7 @@ use AppBundle\Entity\blog_user;
 use AppBundle\Entity\blog_tag;
 use AppBundle\Entity\blog_related;
 use AppBundle\Entity\blog_category;
+use AppBundle\Entity\blog_post_to_category;
 
 //=======================================================================
 // On init stuff
@@ -155,6 +156,10 @@ class BlogController extends Controller
         //CREATE CATEGORIES
         $categoriesArray = $this->generateCategories();
         $this->saveCategoriesInDB($categoriesArray);
+
+        //CREATE POST TO CATEGORIES
+        $postToCatsArray = $this->generatePostsToCategories();
+        $this->savePostToCatInDB($postToCatsArray);
 
         return new Response("Blog inicializado");
     }
@@ -490,6 +495,36 @@ class BlogController extends Controller
         return $categoriesArray;
     }
 
+    private function generatePostsToCategories()
+    {
+        $postToCategoryArray = [];
+
+        $repo = $this->getDoctrine()->getRepository('AppBundle:blog_post');
+        $query = $repo->createQueryBuilder('p')
+            ->where('LENGTH(p.title) > :val')
+            ->setParameter('val', '1')
+            ->getQuery();
+        $postArray = $query->getResult();
+
+        $repo = $this->getDoctrine()->getRepository('AppBundle:blog_category');
+        $query = $repo->createQueryBuilder('c')
+            ->where('LENGTH(c.name) > :val')
+            ->setParameter('val', '1')
+            ->getQuery();
+        $categoryArray = $query->getResult();
+
+        /** @var blog_post $postObject */
+        foreach ($postArray as $postObject) {
+            $randomCatIndex = random_int(0, sizeof($categoryArray)-1);
+            /** @var blog_category $randomCat */
+            $randomCat = $categoryArray[$randomCatIndex];
+            $postToCatObject = new blog_post_to_category( $randomCat->getId() ,$postObject->getId());
+            array_push($postToCategoryArray,$postToCatObject);
+        }
+
+        return $postToCategoryArray;
+    }
+
 
     //*******************************************
     // Cleaners
@@ -565,6 +600,16 @@ class BlogController extends Controller
         $em->flush();
     }
 
+    private function  clearAllPostToCat()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repo = $this->getDoctrine()->getRepository('AppBundle:blog_post_to_category');
+        $query = $repo->createQueryBuilder('p');
+        $query->delete();
+        $query->getQuery()->execute();
+        $em->flush();
+    }
+
     //*******************************************
     // Savers
     //*******************************************
@@ -625,6 +670,16 @@ class BlogController extends Controller
         foreach ( $categoriesArray as $category) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($category);
+        }
+        $em->flush();
+    }
+
+    private function savePostToCatInDB($postToCatsArray)
+    {
+        /** @var blog_category $category */
+        foreach ( $postToCatsArray as $postToCat) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($postToCat);
         }
         $em->flush();
     }
