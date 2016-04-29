@@ -107,6 +107,7 @@ class BlogController extends Controller
         $this->clearAllComments();
         $this->clearAllTags();
         $this->clearAllRelated();
+        $this->clearAllCategories();
 
         // DELETE IMAGES
         $this->deleteAllImages();
@@ -150,6 +151,10 @@ class BlogController extends Controller
         //CREATE RELATED
         $relatedArray = $this->generateRelatedPosts();
         $this->saveRelatedInDB($relatedArray);
+
+        //CREATE CATEGORIES
+        $categoriesArray = $this->generateCategories();
+        $this->saveCategoriesInDB($categoriesArray);
 
         return new Response("Blog inicializado");
     }
@@ -550,6 +555,15 @@ class BlogController extends Controller
         $em->flush();
     }
 
+    private function  clearAllCategories()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repo = $this->getDoctrine()->getRepository('AppBundle:blog_category');
+        $query = $repo->createQueryBuilder('c');
+        $query->delete();
+        $query->getQuery()->execute();
+        $em->flush();
+    }
 
     //*******************************************
     // Savers
@@ -601,6 +615,16 @@ class BlogController extends Controller
         foreach ( $relatedArray as $related) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($related);
+        }
+        $em->flush();
+    }
+
+    private function saveCategoriesInDB($categoriesArray)
+    {
+        /** @var blog_category $category */
+        foreach ( $categoriesArray as $category) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($category);
         }
         $em->flush();
     }

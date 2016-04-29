@@ -4,7 +4,7 @@
     <list default="true" id="39b145bc-b8a4-4403-8089-82a2f23db5be" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/blog_category.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/blog_category.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
     </list>
     <ignored path="blog_v2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,16 +54,17 @@
       <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6749226">
-              <caret line="481" column="51" selection-start-line="481" selection-start-column="51" selection-end-line="481" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.7105263">
+              <caret line="156" column="52" selection-start-line="156" selection-start-column="52" selection-end-line="156" selection-end-column="52" />
               <folding>
                 <element signature="e#39#98#0#PHP" expanded="true" />
-                <element signature="e#16274#16297#1#PHP" expanded="true" />
-                <element signature="e#16588#16609#1#PHP" expanded="true" />
-                <element signature="e#16900#16921#1#PHP" expanded="true" />
-                <element signature="e#17216#17240#1#PHP" expanded="true" />
-                <element signature="e#17531#17551#1#PHP" expanded="true" />
-                <element signature="e#17845#17869#1#PHP" expanded="true" />
+                <element signature="e#16449#16472#1#PHP" expanded="true" />
+                <element signature="e#16763#16784#1#PHP" expanded="true" />
+                <element signature="e#17075#17096#1#PHP" expanded="true" />
+                <element signature="e#17391#17415#1#PHP" expanded="true" />
+                <element signature="e#17706#17726#1#PHP" expanded="true" />
+                <element signature="e#18020#18044#1#PHP" expanded="true" />
+                <element signature="e#18341#18366#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -584,7 +585,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461950978735</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Created categories generator">
+      <created>1461952496476</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1461952496476</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TodoView">
@@ -603,11 +610,11 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26918977" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.49573562" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.47707888" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25053534" sideWeight="0.5634328" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25053534" sideWeight="0.56556505" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26096258" sideWeight="0.47014925" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2601713" sideWeight="0.46801707" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25053534" sideWeight="0.43656716" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25053534" sideWeight="0.43443498" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -654,7 +661,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
-    <MESSAGE value="Controller functions. Problem with  framework folder." />
     <MESSAGE value="Fixing problem with  framework folder." />
     <MESSAGE value="Fixing problem with  framework folder again." />
     <MESSAGE value="No changes." />
@@ -679,7 +685,8 @@
     <MESSAGE value="Renamed databse image." />
     <MESSAGE value="Created tags." />
     <MESSAGE value="Created Related posts." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Related posts." />
+    <MESSAGE value="Created categories generator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created categories generator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -746,12 +753,13 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#16274#16297#1#PHP" expanded="true" />
-            <element signature="e#16588#16609#1#PHP" expanded="true" />
-            <element signature="e#16900#16921#1#PHP" expanded="true" />
-            <element signature="e#17216#17240#1#PHP" expanded="true" />
-            <element signature="e#17531#17551#1#PHP" expanded="true" />
-            <element signature="e#17845#17869#1#PHP" expanded="true" />
+            <element signature="e#16449#16472#1#PHP" expanded="true" />
+            <element signature="e#16763#16784#1#PHP" expanded="true" />
+            <element signature="e#17075#17096#1#PHP" expanded="true" />
+            <element signature="e#17391#17415#1#PHP" expanded="true" />
+            <element signature="e#17706#17726#1#PHP" expanded="true" />
+            <element signature="e#18020#18044#1#PHP" expanded="true" />
+            <element signature="e#18341#18366#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -816,12 +824,13 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#16274#16297#1#PHP" expanded="true" />
-            <element signature="e#16588#16609#1#PHP" expanded="true" />
-            <element signature="e#16900#16921#1#PHP" expanded="true" />
-            <element signature="e#17216#17240#1#PHP" expanded="true" />
-            <element signature="e#17531#17551#1#PHP" expanded="true" />
-            <element signature="e#17845#17869#1#PHP" expanded="true" />
+            <element signature="e#16449#16472#1#PHP" expanded="true" />
+            <element signature="e#16763#16784#1#PHP" expanded="true" />
+            <element signature="e#17075#17096#1#PHP" expanded="true" />
+            <element signature="e#17391#17415#1#PHP" expanded="true" />
+            <element signature="e#17706#17726#1#PHP" expanded="true" />
+            <element signature="e#18020#18044#1#PHP" expanded="true" />
+            <element signature="e#18341#18366#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -886,12 +895,13 @@
           <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#16274#16297#1#PHP" expanded="true" />
-            <element signature="e#16588#16609#1#PHP" expanded="true" />
-            <element signature="e#16900#16921#1#PHP" expanded="true" />
-            <element signature="e#17216#17240#1#PHP" expanded="true" />
-            <element signature="e#17531#17551#1#PHP" expanded="true" />
-            <element signature="e#17845#17869#1#PHP" expanded="true" />
+            <element signature="e#16449#16472#1#PHP" expanded="true" />
+            <element signature="e#16763#16784#1#PHP" expanded="true" />
+            <element signature="e#17075#17096#1#PHP" expanded="true" />
+            <element signature="e#17391#17415#1#PHP" expanded="true" />
+            <element signature="e#17706#17726#1#PHP" expanded="true" />
+            <element signature="e#18020#18044#1#PHP" expanded="true" />
+            <element signature="e#18341#18366#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1090,16 +1100,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6749226">
-          <caret line="481" column="51" selection-start-line="481" selection-start-column="51" selection-end-line="481" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.7105263">
+          <caret line="156" column="52" selection-start-line="156" selection-start-column="52" selection-end-line="156" selection-end-column="52" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#16274#16297#1#PHP" expanded="true" />
-            <element signature="e#16588#16609#1#PHP" expanded="true" />
-            <element signature="e#16900#16921#1#PHP" expanded="true" />
-            <element signature="e#17216#17240#1#PHP" expanded="true" />
-            <element signature="e#17531#17551#1#PHP" expanded="true" />
-            <element signature="e#17845#17869#1#PHP" expanded="true" />
+            <element signature="e#16449#16472#1#PHP" expanded="true" />
+            <element signature="e#16763#16784#1#PHP" expanded="true" />
+            <element signature="e#17075#17096#1#PHP" expanded="true" />
+            <element signature="e#17391#17415#1#PHP" expanded="true" />
+            <element signature="e#17706#17726#1#PHP" expanded="true" />
+            <element signature="e#18020#18044#1#PHP" expanded="true" />
+            <element signature="e#18341#18366#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
