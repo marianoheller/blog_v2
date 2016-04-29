@@ -19,6 +19,7 @@ use AppBundle\Entity\blog_post;
 use AppBundle\Entity\blog_comment;
 use AppBundle\Entity\blog_user;
 use AppBundle\Entity\blog_tag;
+use AppBundle\Entity\blog_related;
 
 //=======================================================================
 // On init stuff
@@ -51,6 +52,9 @@ const commentEnabledAtInit = true;
 
 /** Cantidad de tags en total */
 const cantTagsTotalOnInit = cantPostsAtInit*3;
+
+/** Max RelatedPosts para cada post (pueden ser menos con random() */
+const maxRelatedPostsPerPost = 3;
 
 //=======================================================================
 // Formatting parameters
@@ -90,12 +94,13 @@ class BlogController extends Controller
      */
     public function initAction()
     {
-        //CLEAR ALL AUTHORS, POSTS, USERS, COMMENTS, TAGS
+        //CLEAR ALL AUTHORS, POSTS, USERS, COMMENTS, TAGS, RELATED
         $this->clearAllAuthors();
         $this->clearAllPosts();
         $this->clearAllUsers();
         $this->clearAllComments();
         $this->clearAllTags();
+        $this->clearAllRelated();
 
         // DELETE IMAGES
         $this->deleteAllImages();
@@ -136,6 +141,9 @@ class BlogController extends Controller
         $tagsArray = $this->generateTags();
         $this->saveTagsInDB($tagsArray);
 
+        //CREATE RELATED
+        $relatedArray = $this->generateRelatedPosts();
+        $this->saveRelatedInDB($relatedArray);
 
         return new Response("Blog inicializado");
     }
@@ -422,6 +430,37 @@ class BlogController extends Controller
         return $tagArray;
     }
 
+    private function generateRelatedPosts()
+    {
+        $relatedArray = [];
+
+        //Get data
+        $repo = $this->getDoctrine()->getRepository('AppBundle:blog_post');
+        $query = $repo->createQueryBuilder('p')
+            ->where('LENGTH(p.title) > :val')
+            ->setParameter('val', '1')
+            ->getQuery();
+        $postArray = $query->getResult();
+
+        //Create relations
+        for ( $i=0 ; $i<sizeof($postArray) ; $i++)
+        {
+            $oldTargetIndex = [];
+            $cantDeRelacionesEnElPost = random_int(0,maxRelatedPostsPerPost);
+            if ( $cantDeRelacionesEnElPost >= sizeof($postArray) )
+                $cantDeRelacionesEnElPost = sizeof($postArray)-1;
+            for ( $j=0 ; $j<$cantDeRelacionesEnElPost ; $j++) {
+                while ( ($targetIndex = random_int(0, sizeof($postArray)-1)) == $i  || in_array($targetIndex,$oldTargetIndex)); //Para q no sea related con si mismo
+                array_push($oldTargetIndex,$targetIndex);
+                $relatedObject = new blog_related($i, $targetIndex);
+                array_push($relatedArray, $relatedObject);
+            }
+        }
+
+        return $relatedArray;
+
+    }
+
 
     //*******************************************
     // Cleaners
@@ -477,6 +516,16 @@ class BlogController extends Controller
         $em->flush();
     }
 
+    private function  clearAllRelated()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repo = $this->getDoctrine()->getRepository('AppBundle:blog_related');
+        $query = $repo->createQueryBuilder('r');
+        $query->delete();
+        $query->getQuery()->execute();
+        $em->flush();
+    }
+
 
     //*******************************************
     // Savers
@@ -520,6 +569,18 @@ class BlogController extends Controller
         }
         $em->flush();
     }
+
+
+    private function saveRelatedInDB($relatedArray)
+    {
+        /** @var blog_related $related */
+        foreach ( $relatedArray as $related) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($related);
+        }
+        $em->flush();
+    }
+
 
     //*******************************************
     // Misc.
