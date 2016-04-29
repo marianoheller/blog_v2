@@ -20,6 +20,7 @@ use AppBundle\Entity\blog_comment;
 use AppBundle\Entity\blog_user;
 use AppBundle\Entity\blog_tag;
 use AppBundle\Entity\blog_related;
+use AppBundle\Entity\blog_category;
 
 //=======================================================================
 // On init stuff
@@ -55,6 +56,11 @@ const cantTagsTotalOnInit = cantPostsAtInit*3;
 
 /** Max RelatedPosts para cada post (pueden ser menos con random() */
 const maxRelatedPostsPerPost = 3;
+
+/** Cantidad de categories en total */
+const cantCategoriesTotal = 3;
+/** Category enabled on start */
+const categoryEnabledOnStart = true;
 
 //=======================================================================
 // Formatting parameters
@@ -458,7 +464,25 @@ class BlogController extends Controller
         }
 
         return $relatedArray;
+    }
 
+    private function generateCategories()
+    {
+        $categoriesArray = [];
+        $url = "http://randomword.setgetgo.com/get.php";
+
+        for ( $i=0 ; $i<cantCategoriesTotal ; $i++ )
+        {
+            $category = new blog_category();
+            $lines_array=file($url);
+            $lines_string=implode('',$lines_array);
+            $lines_string = ucfirst($lines_string);
+            $category->setName( $lines_string );
+            $category->setEnabled(categoryEnabledOnStart);
+            array_push($categoriesArray,$category);
+        }
+
+        return $categoriesArray;
     }
 
 

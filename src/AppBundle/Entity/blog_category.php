@@ -31,7 +31,7 @@ class blog_category
     /**
      * @var string
      *
-     * @ORM\Column(name="name_clean", type="string", length=45)
+     * @ORM\Column(name="name_clean", type="string", length=45, nullable=true)
      */
     private $nameClean;
 
@@ -45,7 +45,7 @@ class blog_category
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_created", type="datetime")
+     * @ORM\Column(name="date_created", type="datetime", nullable=true)
      */
     private $dateCreated;
 
