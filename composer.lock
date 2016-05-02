@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ae69fa16c00a607a30790c36f7a5663c",
-    "content-hash": "877bc0a392a93b7730bab697c9994efb",
+    "hash": "a505d18a398348979fff9f15e8578e28",
+    "content-hash": "ef4e24b6f2c6e1340901d95cfe98f10e",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1703,6 +1703,55 @@
             "time": "2016-01-20 09:13:37"
         },
         {
+            "name": "symfony/process",
+            "version": "3.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/process.git",
+                "reference": "53f9407c0bb1c5a79127db8f7bfe12f0f6f3dcdb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/process/zipball/53f9407c0bb1c5a79127db8f7bfe12f0f6f3dcdb",
+                "reference": "53f9407c0bb1c5a79127db8f7bfe12f0f6f3dcdb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Process\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Process Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-04-14 15:30:28"
+        },
+        {
             "name": "symfony/serializer",
             "version": "3.0.x-dev",
             "source": {
@@ -2008,48 +2057,6 @@
                 "templating"
             ],
             "time": "2016-01-25 21:22:18"
-        },
-        {
-            "name": "webmodules/jquery",
-            "version": "2.1.41",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webmodule/jquery.git",
-                "reference": "b1c63b167535f7cb75781285aeefae61d653a692"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webmodule/jquery/zipball/b1c63b167535f7cb75781285aeefae61d653a692",
-                "reference": "b1c63b167535f7cb75781285aeefae61d653a692",
-                "shasum": ""
-            },
-            "type": "library",
-            "extra": {
-                "component": {
-                    "scripts": [
-                        "jquery.js"
-                    ],
-                    "files": [
-                        "jquery.min.js",
-                        "jquery.min.map",
-                        "jquery-migrate.js",
-                        "jquery-migrate.min.js"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "John Resig",
-                    "email": "jeresig@gmail.com"
-                }
-            ],
-            "description": "jQuery JavaScript Library",
-            "homepage": "http://jquery.com",
-            "time": "2015-07-21 18:13:27"
         }
     ],
     "packages-dev": [
@@ -2159,6 +2166,48 @@
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
             "time": "2016-03-23 13:46:08"
+        },
+        {
+            "name": "webmodules/jquery",
+            "version": "2.1.41",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webmodule/jquery.git",
+                "reference": "b1c63b167535f7cb75781285aeefae61d653a692"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webmodule/jquery/zipball/b1c63b167535f7cb75781285aeefae61d653a692",
+                "reference": "b1c63b167535f7cb75781285aeefae61d653a692",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "jquery.js"
+                    ],
+                    "files": [
+                        "jquery.min.js",
+                        "jquery.min.map",
+                        "jquery-migrate.js",
+                        "jquery-migrate.min.js"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Resig",
+                    "email": "jeresig@gmail.com"
+                }
+            ],
+            "description": "jQuery JavaScript Library",
+            "homepage": "http://jquery.com",
+            "time": "2015-07-21 18:13:27"
         }
     ],
     "aliases": [],
@@ -2166,7 +2215,8 @@
     "stability-flags": {
         "symfony/dom-crawler": 20,
         "symfony/css-selector": 20,
-        "symfony/serializer": 20
+        "symfony/serializer": 20,
+        "symfony/process": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
