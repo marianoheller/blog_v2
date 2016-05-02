@@ -5,6 +5,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\CssSelector\CssSelectorConverter;
@@ -99,7 +100,7 @@ class BlogController extends Controller
      *     name="init"
      *      )
      */
-    public function initAction()
+    public function initAction( Request $request )
     {
         //CLEAR ALL AUTHORS, POSTS, USERS, COMMENTS, TAGS, RELATED
         $this->clearAllAuthors();
@@ -168,22 +169,24 @@ class BlogController extends Controller
      * @Route( "/cmd/test",
      *     name="test"
      *      )
+     *
      */
-    public function testAction()
+
+    public function testAction(  Request $request )
     {
-        $url = "http://uinames.com/api/";
-        $lines_array=file($url);
-        $lines_string=implode('',$lines_array);
-
-        $encoders = array( new JsonEncoder() );
-        $normalizers = array(new ObjectNormalizer());
-        $serializer = new Serializer($normalizers, $encoders);
-        $lines_string = preg_replace("/\bname\b/","firstName",$lines_string);
-        $lines_string = preg_replace("/\bsurname\b/","lastName",$lines_string);
-        $lines_string = preg_replace("/\bregion\b/","displayName",$lines_string);
-        //$deserializedObject = $serializer->deserialize($lines_string, 'AppBundle\Entity\blog_author', 'json');
-
-        return new Response($lines_string);
+        // is it an Ajax request?
+        $d1 = new \DateTime();
+        $request->get
+        if ( $request->isXmlHttpRequest() ) {
+            return new JsonResponse(
+                array('data' => 123)
+            );
+        }
+        else {
+            return $this->render("ajax_test.html.twig",
+                array("controllerExecutedAt" => $d1)
+            );
+        }
     }
 
     //********************************************************************************************
