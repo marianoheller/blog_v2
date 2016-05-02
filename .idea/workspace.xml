@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39b145bc-b8a4-4403-8089-82a2f23db5be" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/ajax_test.html.twig" />
+    <list default="true" id="39b145bc-b8a4-4403-8089-82a2f23db5be" name="Default" comment="Cant detect if the request if ajax.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/ajax_test.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/ajax_test.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
     </list>
@@ -52,38 +52,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.538462">
-              <caret line="178" column="21" selection-start-line="178" selection-start-column="21" selection-end-line="178" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.79881656">
+              <caret line="201" column="14" selection-start-line="201" selection-start-column="14" selection-end-line="201" selection-end-column="14" />
               <folding>
                 <element signature="e#39#98#0#PHP" expanded="true" />
-                <element signature="e#5657#5678#0#PHP" expanded="true" />
-                <element signature="e#8559#8582#1#PHP" expanded="true" />
-                <element signature="e#12123#12144#1#PHP" expanded="true" />
-                <element signature="e#13863#13884#1#PHP" expanded="true" />
-                <element signature="e#14537#14558#1#PHP" expanded="true" />
-                <element signature="e#16313#16334#1#PHP" expanded="true" />
-                <element signature="e#16591#16616#1#PHP" expanded="true" />
-                <element signature="e#17575#17598#1#PHP" expanded="true" />
-                <element signature="e#17889#17910#1#PHP" expanded="true" />
-                <element signature="e#18201#18222#1#PHP" expanded="true" />
-                <element signature="e#18517#18541#1#PHP" expanded="true" />
-                <element signature="e#18832#18852#1#PHP" expanded="true" />
-                <element signature="e#19146#19170#1#PHP" expanded="true" />
-                <element signature="e#19467#19492#1#PHP" expanded="true" />
-                <element signature="e#19788#19821#1#PHP" expanded="true" />
+                <element signature="e#5635#5656#0#PHP" expanded="true" />
+                <element signature="e#8972#8995#1#PHP" expanded="true" />
+                <element signature="e#12536#12557#1#PHP" expanded="true" />
+                <element signature="e#14276#14297#1#PHP" expanded="true" />
+                <element signature="e#14950#14971#1#PHP" expanded="true" />
+                <element signature="e#16726#16747#1#PHP" expanded="true" />
+                <element signature="e#17004#17029#1#PHP" expanded="true" />
+                <element signature="e#17988#18011#1#PHP" expanded="true" />
+                <element signature="e#18302#18323#1#PHP" expanded="true" />
+                <element signature="e#18614#18635#1#PHP" expanded="true" />
+                <element signature="e#18930#18954#1#PHP" expanded="true" />
+                <element signature="e#19245#19265#1#PHP" expanded="true" />
+                <element signature="e#19559#19583#1#PHP" expanded="true" />
+                <element signature="e#19880#19905#1#PHP" expanded="true" />
+                <element signature="e#20201#20234#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajax_test.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ajax_test.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/ajax_test.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4519941">
-              <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+            <state vertical-scroll-proportion="-13.730769">
+              <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -121,9 +121,9 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/blog_comment.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/blog_tag.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/blog_category.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/ajax_test.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/ajax_test_ext.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/ajax_test.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" />
       </list>
     </option>
   </component>
@@ -653,7 +653,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461962232427</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Testing ajax.">
+      <created>1462209425211</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1462209425211</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TodoView">
@@ -671,14 +677,14 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19189766" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.49573562" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21818182" sideWeight="0.5698294" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.47707888" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21841542" sideWeight="0.5698294" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25989306" sideWeight="0.46588486" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21818182" sideWeight="0.43017057" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21841542" sideWeight="0.43017057" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.47707888" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -723,8 +729,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
-    <MESSAGE value="No changes." />
-    <MESSAGE value="Working with serializer. Bug in testing." />
     <MESSAGE value="Fixed serializer." />
     <MESSAGE value="Author generator created." />
     <MESSAGE value="Comments." />
@@ -748,7 +752,9 @@
     <MESSAGE value="Created categories generator" />
     <MESSAGE value="Finished categories." />
     <MESSAGE value="Finished post to categories." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished post to categories." />
+    <MESSAGE value="Testing ajax." />
+    <MESSAGE value="Cant detect if the request if ajax." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cant detect if the request if ajax." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -799,21 +805,21 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#5657#5678#0#PHP" expanded="true" />
-            <element signature="e#8559#8582#1#PHP" expanded="true" />
-            <element signature="e#12123#12144#1#PHP" expanded="true" />
-            <element signature="e#13863#13884#1#PHP" expanded="true" />
-            <element signature="e#14537#14558#1#PHP" expanded="true" />
-            <element signature="e#16313#16334#1#PHP" expanded="true" />
-            <element signature="e#16591#16616#1#PHP" expanded="true" />
-            <element signature="e#17575#17598#1#PHP" expanded="true" />
-            <element signature="e#17889#17910#1#PHP" expanded="true" />
-            <element signature="e#18201#18222#1#PHP" expanded="true" />
-            <element signature="e#18517#18541#1#PHP" expanded="true" />
-            <element signature="e#18832#18852#1#PHP" expanded="true" />
-            <element signature="e#19146#19170#1#PHP" expanded="true" />
-            <element signature="e#19467#19492#1#PHP" expanded="true" />
-            <element signature="e#19788#19821#1#PHP" expanded="true" />
+            <element signature="e#5635#5656#0#PHP" expanded="true" />
+            <element signature="e#8972#8995#1#PHP" expanded="true" />
+            <element signature="e#12536#12557#1#PHP" expanded="true" />
+            <element signature="e#14276#14297#1#PHP" expanded="true" />
+            <element signature="e#14950#14971#1#PHP" expanded="true" />
+            <element signature="e#16726#16747#1#PHP" expanded="true" />
+            <element signature="e#17004#17029#1#PHP" expanded="true" />
+            <element signature="e#17988#18011#1#PHP" expanded="true" />
+            <element signature="e#18302#18323#1#PHP" expanded="true" />
+            <element signature="e#18614#18635#1#PHP" expanded="true" />
+            <element signature="e#18930#18954#1#PHP" expanded="true" />
+            <element signature="e#19245#19265#1#PHP" expanded="true" />
+            <element signature="e#19559#19583#1#PHP" expanded="true" />
+            <element signature="e#19880#19905#1#PHP" expanded="true" />
+            <element signature="e#20201#20234#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -878,21 +884,21 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#5657#5678#0#PHP" expanded="true" />
-            <element signature="e#8559#8582#1#PHP" expanded="true" />
-            <element signature="e#12123#12144#1#PHP" expanded="true" />
-            <element signature="e#13863#13884#1#PHP" expanded="true" />
-            <element signature="e#14537#14558#1#PHP" expanded="true" />
-            <element signature="e#16313#16334#1#PHP" expanded="true" />
-            <element signature="e#16591#16616#1#PHP" expanded="true" />
-            <element signature="e#17575#17598#1#PHP" expanded="true" />
-            <element signature="e#17889#17910#1#PHP" expanded="true" />
-            <element signature="e#18201#18222#1#PHP" expanded="true" />
-            <element signature="e#18517#18541#1#PHP" expanded="true" />
-            <element signature="e#18832#18852#1#PHP" expanded="true" />
-            <element signature="e#19146#19170#1#PHP" expanded="true" />
-            <element signature="e#19467#19492#1#PHP" expanded="true" />
-            <element signature="e#19788#19821#1#PHP" expanded="true" />
+            <element signature="e#5635#5656#0#PHP" expanded="true" />
+            <element signature="e#8972#8995#1#PHP" expanded="true" />
+            <element signature="e#12536#12557#1#PHP" expanded="true" />
+            <element signature="e#14276#14297#1#PHP" expanded="true" />
+            <element signature="e#14950#14971#1#PHP" expanded="true" />
+            <element signature="e#16726#16747#1#PHP" expanded="true" />
+            <element signature="e#17004#17029#1#PHP" expanded="true" />
+            <element signature="e#17988#18011#1#PHP" expanded="true" />
+            <element signature="e#18302#18323#1#PHP" expanded="true" />
+            <element signature="e#18614#18635#1#PHP" expanded="true" />
+            <element signature="e#18930#18954#1#PHP" expanded="true" />
+            <element signature="e#19245#19265#1#PHP" expanded="true" />
+            <element signature="e#19559#19583#1#PHP" expanded="true" />
+            <element signature="e#19880#19905#1#PHP" expanded="true" />
+            <element signature="e#20201#20234#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -957,21 +963,21 @@
           <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#5657#5678#0#PHP" expanded="true" />
-            <element signature="e#8559#8582#1#PHP" expanded="true" />
-            <element signature="e#12123#12144#1#PHP" expanded="true" />
-            <element signature="e#13863#13884#1#PHP" expanded="true" />
-            <element signature="e#14537#14558#1#PHP" expanded="true" />
-            <element signature="e#16313#16334#1#PHP" expanded="true" />
-            <element signature="e#16591#16616#1#PHP" expanded="true" />
-            <element signature="e#17575#17598#1#PHP" expanded="true" />
-            <element signature="e#17889#17910#1#PHP" expanded="true" />
-            <element signature="e#18201#18222#1#PHP" expanded="true" />
-            <element signature="e#18517#18541#1#PHP" expanded="true" />
-            <element signature="e#18832#18852#1#PHP" expanded="true" />
-            <element signature="e#19146#19170#1#PHP" expanded="true" />
-            <element signature="e#19467#19492#1#PHP" expanded="true" />
-            <element signature="e#19788#19821#1#PHP" expanded="true" />
+            <element signature="e#5635#5656#0#PHP" expanded="true" />
+            <element signature="e#8972#8995#1#PHP" expanded="true" />
+            <element signature="e#12536#12557#1#PHP" expanded="true" />
+            <element signature="e#14276#14297#1#PHP" expanded="true" />
+            <element signature="e#14950#14971#1#PHP" expanded="true" />
+            <element signature="e#16726#16747#1#PHP" expanded="true" />
+            <element signature="e#17004#17029#1#PHP" expanded="true" />
+            <element signature="e#17988#18011#1#PHP" expanded="true" />
+            <element signature="e#18302#18323#1#PHP" expanded="true" />
+            <element signature="e#18614#18635#1#PHP" expanded="true" />
+            <element signature="e#18930#18954#1#PHP" expanded="true" />
+            <element signature="e#19245#19265#1#PHP" expanded="true" />
+            <element signature="e#19559#19583#1#PHP" expanded="true" />
+            <element signature="e#19880#19905#1#PHP" expanded="true" />
+            <element signature="e#20201#20234#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1167,36 +1173,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/ajax_test.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.538462">
-          <caret line="178" column="21" selection-start-line="178" selection-start-column="21" selection-end-line="178" selection-end-column="21" />
-          <folding>
-            <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#5657#5678#0#PHP" expanded="true" />
-            <element signature="e#8559#8582#1#PHP" expanded="true" />
-            <element signature="e#12123#12144#1#PHP" expanded="true" />
-            <element signature="e#13863#13884#1#PHP" expanded="true" />
-            <element signature="e#14537#14558#1#PHP" expanded="true" />
-            <element signature="e#16313#16334#1#PHP" expanded="true" />
-            <element signature="e#16591#16616#1#PHP" expanded="true" />
-            <element signature="e#17575#17598#1#PHP" expanded="true" />
-            <element signature="e#17889#17910#1#PHP" expanded="true" />
-            <element signature="e#18201#18222#1#PHP" expanded="true" />
-            <element signature="e#18517#18541#1#PHP" expanded="true" />
-            <element signature="e#18832#18852#1#PHP" expanded="true" />
-            <element signature="e#19146#19170#1#PHP" expanded="true" />
-            <element signature="e#19467#19492#1#PHP" expanded="true" />
-            <element signature="e#19788#19821#1#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-13.730769">
+          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/ajax_test.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4519941">
-          <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
-          <folding />
+        <state vertical-scroll-proportion="0.79881656">
+          <caret line="201" column="14" selection-start-line="201" selection-start-column="14" selection-end-line="201" selection-end-column="14" />
+          <folding>
+            <element signature="e#39#98#0#PHP" expanded="true" />
+            <element signature="e#5635#5656#0#PHP" expanded="true" />
+            <element signature="e#8972#8995#1#PHP" expanded="true" />
+            <element signature="e#12536#12557#1#PHP" expanded="true" />
+            <element signature="e#14276#14297#1#PHP" expanded="true" />
+            <element signature="e#14950#14971#1#PHP" expanded="true" />
+            <element signature="e#16726#16747#1#PHP" expanded="true" />
+            <element signature="e#17004#17029#1#PHP" expanded="true" />
+            <element signature="e#17988#18011#1#PHP" expanded="true" />
+            <element signature="e#18302#18323#1#PHP" expanded="true" />
+            <element signature="e#18614#18635#1#PHP" expanded="true" />
+            <element signature="e#18930#18954#1#PHP" expanded="true" />
+            <element signature="e#19245#19265#1#PHP" expanded="true" />
+            <element signature="e#19559#19583#1#PHP" expanded="true" />
+            <element signature="e#19880#19905#1#PHP" expanded="true" />
+            <element signature="e#20201#20234#1#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

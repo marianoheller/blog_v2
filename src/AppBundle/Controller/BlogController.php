@@ -176,7 +176,6 @@ class BlogController extends Controller
     {
         // is it an Ajax request?
         $d1 = new \DateTime();
-        $request->get
         if ( $request->isXmlHttpRequest() ) {
             return new JsonResponse(
                 array('data' => 123)
@@ -188,6 +187,26 @@ class BlogController extends Controller
             );
         }
     }
+
+    /**
+     * @Route( "/cmd/test_ajax",
+     *     name="testAjax"
+     *     )
+     */
+    public function getContainer( Request $request)
+    {
+        //$d1 = new \DateTime();
+        if ( $request->isXmlHttpRequest() ) {
+            return new JsonResponse(
+                array('data' => 123)
+            );
+        }
+        else
+            return new JsonResponse(
+                array('data' => 456)
+            );
+    }
+
 
     //********************************************************************************************
     // Private functions
