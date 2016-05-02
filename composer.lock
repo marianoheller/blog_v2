@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ac1065328c94a34f777b73156d587466",
-    "content-hash": "5b01e01044f233cd2fd62cadf26319db",
+    "hash": "ae69fa16c00a607a30790c36f7a5663c",
+    "content-hash": "877bc0a392a93b7730bab697c9994efb",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2008,6 +2008,48 @@
                 "templating"
             ],
             "time": "2016-01-25 21:22:18"
+        },
+        {
+            "name": "webmodules/jquery",
+            "version": "2.1.41",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webmodule/jquery.git",
+                "reference": "b1c63b167535f7cb75781285aeefae61d653a692"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webmodule/jquery/zipball/b1c63b167535f7cb75781285aeefae61d653a692",
+                "reference": "b1c63b167535f7cb75781285aeefae61d653a692",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "jquery.js"
+                    ],
+                    "files": [
+                        "jquery.min.js",
+                        "jquery.min.map",
+                        "jquery-migrate.js",
+                        "jquery-migrate.min.js"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Resig",
+                    "email": "jeresig@gmail.com"
+                }
+            ],
+            "description": "jQuery JavaScript Library",
+            "homepage": "http://jquery.com",
+            "time": "2015-07-21 18:13:27"
         }
     ],
     "packages-dev": [

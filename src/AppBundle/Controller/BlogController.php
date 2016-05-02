@@ -177,34 +177,36 @@ class BlogController extends Controller
         // is it an Ajax request?
         $d1 = new \DateTime();
         if ( $request->isXmlHttpRequest() ) {
-            return new JsonResponse(
+            $ret =  new JsonResponse(
                 array('data' => 123)
             );
         }
         else {
-            return $this->render("ajax_test.html.twig",
+            $ret =  $this->render("ajax_test.html.twig",
                 array("controllerExecutedAt" => $d1)
             );
         }
+        return $ret;
     }
 
     /**
      * @Route( "/cmd/test_ajax",
      *     name="testAjax"
      *     )
+     * @param Request $request
+     * @return JsonResponse
      */
     public function getContainer( Request $request)
     {
         //$d1 = new \DateTime();
         if ( $request->isXmlHttpRequest() ) {
-            return new JsonResponse(
+            $ret =  new JsonResponse(
                 array('data' => 123)
             );
         }
         else
-            return new JsonResponse(
-                array('data' => 456)
-            );
+            $ret =  new Response( $request->getClientIp() );
+        return $ret;
     }
 
 

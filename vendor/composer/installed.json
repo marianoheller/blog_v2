@@ -2175,5 +2175,49 @@
         ],
         "description": "Symfony Serializer Component",
         "homepage": "https://symfony.com"
+    },
+    {
+        "name": "webmodules/jquery",
+        "version": "2.1.41",
+        "version_normalized": "2.1.41.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/webmodule/jquery.git",
+            "reference": "b1c63b167535f7cb75781285aeefae61d653a692"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/webmodule/jquery/zipball/b1c63b167535f7cb75781285aeefae61d653a692",
+            "reference": "b1c63b167535f7cb75781285aeefae61d653a692",
+            "shasum": ""
+        },
+        "time": "2015-07-21 18:13:27",
+        "type": "library",
+        "extra": {
+            "component": {
+                "scripts": [
+                    "jquery.js"
+                ],
+                "files": [
+                    "jquery.min.js",
+                    "jquery.min.map",
+                    "jquery-migrate.js",
+                    "jquery-migrate.min.js"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "John Resig",
+                "email": "jeresig@gmail.com"
+            }
+        ],
+        "description": "jQuery JavaScript Library",
+        "homepage": "http://jquery.com"
     }
 ]
