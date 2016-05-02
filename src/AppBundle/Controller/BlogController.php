@@ -80,6 +80,12 @@ const bannerHeight = 300;
  */
 class BlogController extends Controller
 {
+    //********************************************************************************************
+    // Private Variables
+    //********************************************************************************************
+
+    private $initStatus=0;
+
 
     //********************************************************************************************
     // Public functions / Routing
@@ -102,6 +108,8 @@ class BlogController extends Controller
      */
     public function initAction( Request $request )
     {
+        $this->initStatus++;
+
         //CLEAR ALL AUTHORS, POSTS, USERS, COMMENTS, TAGS, RELATED
         $this->clearAllAuthors();
         $this->clearAllPosts();
@@ -110,27 +118,32 @@ class BlogController extends Controller
         $this->clearAllTags();
         $this->clearAllRelated();
         $this->clearAllCategories();
+        $this->initStatus++;
 
         // DELETE IMAGES
         $this->deleteAllImages();
+        $this->initStatus++;
 
         //CREATE AUTHORS
         for ($i = 0; $i < cantAuthorsAtInit; $i++) {
             $author = $this->generateAuthor();
             $this->saveAuthorInDB($author);
         }
+        $this->initStatus++;
 
         //CREATE USERS
         for ($i = 0; $i < cantUsersAtInit; $i++) {
             $user = $this->generateUser();
             $this->saveUserInDB($user);
         }
+        $this->initStatus++;
 
         //CREATE POSTS
         for ($i = 0; $i < cantPostsAtInit; $i++) {
             $blog_post = $this->generatePost();
             $this->savePostInDB($blog_post);
         }
+        $this->initStatus++;
 
         //CREATE COMMENTS
         $repo = $this->getDoctrine()->getRepository('AppBundle:blog_post');
@@ -145,24 +158,45 @@ class BlogController extends Controller
             $comment = $this->generateCommentToPost($postObject->getId());
             $this->saveCommentInDB($comment);
         }
+        $this->initStatus++;
 
         //CREATE TAGS
         $tagsArray = $this->generateTags();
         $this->saveTagsInDB($tagsArray);
+        $this->initStatus++;
 
         //CREATE RELATED
         $relatedArray = $this->generateRelatedPosts();
         $this->saveRelatedInDB($relatedArray);
+        $this->initStatus++;
 
         //CREATE CATEGORIES
         $categoriesArray = $this->generateCategories();
         $this->saveCategoriesInDB($categoriesArray);
+        $this->initStatus++;
 
         //CREATE POST TO CATEGORIES
         $postToCatsArray = $this->generatePostsToCategories();
         $this->savePostToCatInDB($postToCatsArray);
+        $this->initStatus++;
 
         return new Response("Blog inicializado");
+    }
+
+    /**
+     * @Route( "/cmd/get_init_status",
+     *     name="init_status"
+     *      )
+     *
+     */
+
+    public function initStatusAction ( Request $request )
+    {
+        $ret = new Response();
+        if ( $request->isXmlHttpRequest() ) {
+            $ret = new Response($this->getInitStatus());
+        }
+        return $ret;
     }
 
     /**
@@ -198,15 +232,7 @@ class BlogController extends Controller
      */
     public function getContainer( Request $request)
     {
-        //$d1 = new \DateTime();
-        if ( $request->isXmlHttpRequest() ) {
-            $ret =  new JsonResponse(
-                array('data' => 123)
-            );
-        }
-        else
-            $ret =  new Response( $request->getClientIp() );
-        return $ret;
+        return $this->render("init.html.twig");
     }
 
 
@@ -760,7 +786,10 @@ class BlogController extends Controller
             if ( !is_dir($fichero) && strlen($fichero)>3)
                 unlink($folder."\\".$fichero);
         }
+    }
 
-
+    public function getInitStatus()
+    {
+        return $this->initStatus;
     }
 }

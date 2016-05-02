@@ -16,7 +16,7 @@
     <script>
         $(document).ready(function(){
             $("button").click(function(){
-                $("#demo").load("test_ajax");
+                $("#demo").load("test");
             });
         });
     </script>
@@ -29,7 +29,7 @@
                     document.getElementById("demo").innerHTML = xhttp.responseText;
                 }
             };
-            xhttp.open("GET", "/cmd/test_ajax", true);
+            xhttp.open("GET", "/cmd/test", true);
             xhttp.send();
         }
     </script>

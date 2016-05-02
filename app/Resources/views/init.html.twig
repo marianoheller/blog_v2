@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Inicializando Blog_v2</title>
+    <style>
+        #loading-gif {
+            alignment: center;
+        }
+        #main-div {
+            text-align: center;
+        }
+        samp {
+            border: 3px groove #ccc;
+            color: #000000;
+            display: inline-block;
+            padding: 5px;
+            width: 300px;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        var set_delay = 2000,
+        getDataFromServer = function () {
+            $.ajax({
+                url : 'get_init_status',
+                type: 'GET'
+            })
+            .done(function (response) {
+                var div = document.getElementById('term');
+                response = "<br/>"+response;
+                div.innerHTML = div.innerHTML + response;
+            })
+            .always(function () {
+                setTimeout(getDataFromServer, set_delay);
+            });
+        };
+    </script>
+
+
+</head>
+<body>
+    <div id="main-div">
+        <h3>Inicializando...</h3>
+        <img id="loading-gif" src="{{ asset('gif/ajax-loader.gif') }}">
+        <p>
+            <samp id="term">
+                This is a test. This is a test. <br />Content-type: text/html<br /> &lt;h1&gt;Hello World&lt;/h1&gt;
+            </samp>
+        </p>
+        <p id="demo"></p>
+    </div>
+
+
+
+    <script>
+        $(document).ready(function() {
+            getDataFromServer();
+        });
+    </script>
+</body>
+</html>
+
