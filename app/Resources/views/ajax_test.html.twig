@@ -2,15 +2,24 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <script src="/vendor/webmodules/jquery/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 </head>
 <body>
     <h2>AJAX</h2>
     <h3> {{ controllerExecutedAt.format('Y-m-d H:i:s') }}</h3>
-    <button type="button" onclick="loadDoc()">Request data</button>
-    <p id="demo"></p>
-    {% block ajaxRequest %} {% endblock %}
 
+    <button type="button" onclick="loadDoc()">Without JQuery</button>
+    <button id="button-jquery">With JQuery</button>
+
+    <p id="demo"></p>
+
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("#demo").load("test_ajax");
+            });
+        });
+    </script>
 
     <script>
         function loadDoc() {

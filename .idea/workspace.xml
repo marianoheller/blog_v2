@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39b145bc-b8a4-4403-8089-82a2f23db5be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/blog_v2.iml" afterPath="$PROJECT_DIR$/.idea/blog_v2.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/ajax_test.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/ajax_test.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
     </list>
     <ignored path="blog_v2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-34.5">
-              <caret line="201" column="36" selection-start-line="201" selection-start-column="36" selection-end-line="201" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.19526628">
+              <caret line="180" column="29" selection-start-line="180" selection-start-column="29" selection-end-line="180" selection-end-column="29" />
               <folding>
                 <element signature="e#39#98#0#PHP" expanded="true" />
                 <element signature="e#5637#5658#0#PHP" expanded="true" />
@@ -84,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajax_test.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ajax_test.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/ajax_test.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2766272">
-              <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+            <state vertical-scroll-proportion="-11.769231">
+              <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -671,7 +665,13 @@
       <option name="project" value="LOCAL" />
       <updated>1462209844529</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Added Jquery. Gonna try with that.">
+      <created>1462212495391</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1462212495391</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TodoView">
@@ -741,7 +741,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
-    <MESSAGE value="Fixed serializer." />
     <MESSAGE value="Author generator created." />
     <MESSAGE value="Comments." />
     <MESSAGE value="Improved author generator. Gotta fix encoding." />
@@ -766,7 +765,8 @@
     <MESSAGE value="Finished post to categories." />
     <MESSAGE value="Testing ajax." />
     <MESSAGE value="Cant detect if the request if ajax." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cant detect if the request if ajax." />
+    <MESSAGE value="Added Jquery. Gonna try with that." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Jquery. Gonna try with that." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1185,10 +1185,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/ajax_test.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.769231">
+          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BlogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-34.5">
-          <caret line="201" column="36" selection-start-line="201" selection-start-column="36" selection-end-line="201" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.19526628">
+          <caret line="180" column="29" selection-start-line="180" selection-start-column="29" selection-end-line="180" selection-end-column="29" />
           <folding>
             <element signature="e#39#98#0#PHP" expanded="true" />
             <element signature="e#5637#5658#0#PHP" expanded="true" />
@@ -1207,14 +1215,6 @@
             <element signature="e#19956#19981#1#PHP" expanded="true" />
             <element signature="e#20277#20310#1#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/ajax_test.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2766272">
-          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
