@@ -8,6 +8,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Symfony\Component\DomCrawler\Crawler;
+use Symfony\Component\Console\Output\ConsoleOutput;
+use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\CssSelector\CssSelectorConverter;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
@@ -108,7 +110,12 @@ class BlogController extends Controller
      */
     public function initAction( Request $request )
     {
-        $this->initStatus++;
+        $output = new ConsoleOutput();
+        $progress = new ProgressBar($output);
+        $progress->setFormat("very_verbose_nomax");
+        $progress->start();
+
+        $progress->advance();
 
         //CLEAR ALL AUTHORS, POSTS, USERS, COMMENTS, TAGS, RELATED
         $this->clearAllAuthors();
@@ -180,6 +187,7 @@ class BlogController extends Controller
         $this->savePostToCatInDB($postToCatsArray);
         $this->initStatus++;
 
+        $progress->finish();
         return new Response("Blog inicializado");
     }
 
