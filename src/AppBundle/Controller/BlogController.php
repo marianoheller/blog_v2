@@ -27,6 +27,10 @@ use AppBundle\Entity\blog_category;
 use AppBundle\Entity\blog_post_to_category;
 
 //=======================================================================
+// Homepage
+const maxPostsPerPage = 3;
+
+//=======================================================================
 // On init stuff
 /** default image folder name (donde se guardan las imagenes) */
 const imagesFolderName = "images_blog";
@@ -94,13 +98,49 @@ class BlogController extends Controller
     //********************************************************************************************
 
     /**
-     * @Route("/blog",
-     *     name="blog"
-     *     )
+     * @Route(	"/blog/{page}.{_format}",
+     *     		name="blog",
+     *     		defaults={"_format":"html",
+     *                    "page":"0"
+     *                   },
+     *     		requirements= {
+     *     			"_format"="html",
+     *              "page": "p.\d+"
+     * 				}
+     * 			)
      */
-    public function indexAction()
+    public function indexAction($page)
     {
-        return $this->render('blog/blog_content.html.twig');
+        $pag = intval (str_replace('p/','',$page));
+
+        //GET POSTS
+        $em = $this->getDoctrine()->getManager();
+        $repo = $this->getDoctrine()->getRepository('AppBundle:blog_post');
+        $offset = $pag*maxPostsPerPage;
+        $query = $repo->createQueryBuilder('p')
+            ->where('LENGTH(p.article) > :val')
+            ->setParameter('val', '3')
+            ->orderBy('p.id', 'DESC')     //de mas nuevo a mas viejo
+            ->setFirstResult( $offset )
+            ->setMaxResults(maxPostsPerPage)          //max posts per page
+            ->getQuery();
+        $articles = $query->getResult();
+
+        //Get Total Count (for pagination)
+        $queryCount = $em->createQuery('SELECT COUNT(b) FROM AppBundle:blog_post b');
+        $numArticles = $queryCount->getSingleScalarResult();
+
+        //Get Authors
+        $queryCount = $em->createQuery('SELECT a FROM AppBundle:blog_author a ORDER BY a.displayName ASC');
+        $authorsArray = $queryCount->getResult();
+
+        return $this->render(
+            'blog/blog_content.html.twig',
+            array('blog_entries' => $articles,
+                'cantArticles' => $numArticles,
+                'authorsArray' => $authorsArray
+            )
+        );
     }
 
     /**
