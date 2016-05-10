@@ -119,7 +119,7 @@ class BlogController extends Controller
         $offset = $pag*maxPostsPerPage;
         $query = $repo->createQueryBuilder('p')
             ->where('LENGTH(p.article) > :val')
-            ->setParameter('val', '3')
+            ->setParameter('val', '1')
             ->orderBy('p.id', 'DESC')     //de mas nuevo a mas viejo
             ->setFirstResult( $offset )
             ->setMaxResults(maxPostsPerPage)          //max posts per page
@@ -131,8 +131,14 @@ class BlogController extends Controller
         $numArticles = $queryCount->getSingleScalarResult();
 
         //Get Authors
-        $queryCount = $em->createQuery('SELECT a FROM AppBundle:blog_author a ORDER BY a.displayName ASC');
-        $authorsArray = $queryCount->getResult();
+        $queryAuth = $em->createQuery('SELECT a FROM AppBundle:blog_author a ORDER BY a.displayName ASC');
+        $authorsArray = $queryAuth->getResult();
+
+        //Get Comments
+        // SELECT t1.* FROM blog_comment AS T1 INNER JOIN blog_post AS T2 ON T1.post_id = T2.id ORDER BY T1.post_id ASC
+        $queryComment = $em->createQuery('SELECT a FROM AppBundle:blog_comment a INNER JOIN blog_ ORDER BY a.postId ASC');
+        $commentsArray = $queryComment->getResult();
+
 
         return $this->render(
             'blog/blog_content.html.twig',
